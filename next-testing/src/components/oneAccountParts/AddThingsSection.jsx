@@ -2,11 +2,11 @@ import React from "react";
 import GoodAddresses from "./GoodAddresses";
 import GoodNumbers from "./GoodNumbers";
 
-function AddThingsSection({ object, handleCopyClick }) {
+function AddThingsSection({ account, handleCopyClick }) {
   return (
     <div className="allThingsSection">
-      <GoodAddresses object={object} handleCopyClick={handleCopyClick} />
-      <GoodNumbers object={object} handleCopyClick={handleCopyClick} />
+      <GoodAddresses account={account} handleCopyClick={handleCopyClick} />
+      <GoodNumbers account={account} handleCopyClick={handleCopyClick} />
     </div>
   );
 }

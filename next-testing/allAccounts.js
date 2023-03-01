@@ -1,6 +1,6 @@
 const allAccounts = [
   {
-    id: 1,
+    id: "1",
     NAME: "-",
     PRINCIPAL: "-",
     PAYMENTS: "-",
@@ -115,7 +115,7 @@ const allAccounts = [
   },
 
   {
-    id: 2,
+    id: "2",
     NAME: "Jane Doe",
     PRINCIPAL: "$5,000",
     PAYMENTS: "$250",
@@ -267,7 +267,7 @@ const allAccounts = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     NAME: "George Harris",
     PRINCIPAL: "$5,000",
     PAYMENTS: "$250",
@@ -372,7 +372,6 @@ const allAccounts = [
       { number: "305-555-1212", area: "Pacific", type: "Home" },
       { number: "713-555-1212", area: "Pacific", type: "Home" },
       { number: "972-555-1212", area: "Pacific", type: "Home" },
-      ,
     ],
     NOTES: [
       {
@@ -388,7 +387,7 @@ const allAccounts = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     NAME: "James Woods",
     PRINCIPAL: "$7,000",
     PAYMENTS: "$300",
@@ -515,7 +514,7 @@ const allAccounts = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     NAME: "John Smith",
     PRINCIPAL: "$5,000",
     PAYMENTS: "$250",

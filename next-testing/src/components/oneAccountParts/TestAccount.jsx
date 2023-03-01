@@ -4,14 +4,14 @@ import Relatives from "./AccountTemplate/Relatives/Relatives";
 import TLO from "./AccountTemplate/TLO/TLO";
 import StatusComp from "./StatusComp";
 
-function TestAccount({ object, handleCopyClick }) {
+function TestAccount({ account, handleCopyClick }) {
   //copy to clipboard
   const handleClick = (e) => {
     navigator.clipboard.writeText(e.currentTarget.value);
     handleCopyClick();
   };
 
-  const importedOnDate = new Date(object.IMPORTED_ON);
+  const importedOnDate = new Date(account.IMPORTED_ON);
   const daysSince = Math.floor(
     (new Date() - importedOnDate) / (1000 * 60 * 60 * 24)
   );
@@ -27,7 +27,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.IMPORTED_ON}
+            defaultValue={account.IMPORTED_ON}
           />{" "}
           <div className="beforeInput thirty">Age:</div>
           <input
@@ -48,7 +48,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PRINCIPAL}
+            defaultValue={account.PRINCIPAL}
           />
 
           <div className="beforeInput thirty">Linked Balance:</div>
@@ -57,7 +57,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.LINKED_BALANCE}
+            defaultValue={account.LINKED_BALANCE}
           />
         </div>
         <div className="div">
@@ -67,7 +67,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.BALANCE}
+            defaultValue={account.BALANCE}
           />{" "}
           <div className="beforeInput thirty">Payment Portal:</div>
           <input
@@ -75,7 +75,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PAYMENT_PORTAL}
+            defaultValue={account.PAYMENT_PORTAL}
           />{" "}
         </div>
         <div className="div">
@@ -85,7 +85,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PAYMENTS}
+            defaultValue={account.PAYMENTS}
           />
 
           <div className="beforeInput thirty">Last Payment:</div>
@@ -94,7 +94,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.LAST_PAYMENT}
+            defaultValue={account.LAST_PAYMENT}
           />
         </div>
         <div className="div">
@@ -104,7 +104,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.DATE_LAST_PAYMENT}
+            defaultValue={account.DATE_LAST_PAYMENT}
           />
 
           <div className="beforeInput thirty ">Date of Last Charge:</div>
@@ -113,13 +113,13 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.DATE_OF_LAST_CHARGE}
+            defaultValue={account.DATE_OF_LAST_CHARGE}
           />
         </div>
       </div>
       <div className="title">Client</div>
       <div className="section">
-        <StatusComp object={object} />
+        <StatusComp account={account} />
 
         <div className="div">
           <div className="beforeInput thirty">Client:</div>
@@ -128,7 +128,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.CLIENT}
+            defaultValue={account.CLIENT}
           />
 
           <div className="beforeInput thirty">Account Type:</div>
@@ -137,7 +137,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.ACCOUNT_TYPE}
+            defaultValue={account.ACCOUNT_TYPE}
           />
         </div>
         <div className="div">
@@ -147,7 +147,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.CREDITOR}
+            defaultValue={account.CREDITOR}
           />
 
           <div className="beforeInput thirty">Account #:</div>
@@ -156,7 +156,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.ACCOUNT_NUMBER}
+            defaultValue={account.ACCOUNT_NUMBER}
           />
         </div>
         <div className="div">
@@ -166,7 +166,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.ORIGINATED}
+            defaultValue={account.ORIGINATED}
           />
 
           <div className="beforeInput thirty">Account Received:</div>
@@ -175,7 +175,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.ACCOUNT_RECEIVED}
+            defaultValue={account.ACCOUNT_RECEIVED}
           />
         </div>
         <div className="div">
@@ -185,7 +185,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.IMPORTED_ON}
+            defaultValue={account.IMPORTED_ON}
           />
 
           <div className="beforeInput thirty">Collector:</div>
@@ -194,7 +194,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.COLLECTOR}
+            defaultValue={account.COLLECTOR}
           />
         </div>
         <div className="div">
@@ -204,7 +204,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.CLIENT_CLAIM_NUMBER}
+            defaultValue={account.CLIENT_CLAIM_NUMBER}
           />
 
           <div className="beforeInput thirty">Charged Off:</div>
@@ -213,7 +213,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.CHARGED_OFF}
+            defaultValue={account.CHARGED_OFF}
           />
         </div>
         <div className="div">
@@ -223,7 +223,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PURCHASED}
+            defaultValue={account.PURCHASED}
           />
 
           <div className="beforeInput thirty">Queue:</div>
@@ -232,7 +232,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.QUEUE}
+            defaultValue={account.QUEUE}
           />
         </div>
         <div className="div">
@@ -242,7 +242,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.NEXT_WORK}
+            defaultValue={account.NEXT_WORK}
           />
 
           <div className="beforeInput thirty ">Debtor Payment ID:</div>
@@ -251,7 +251,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.DEBTOR_PMT_ID}
+            defaultValue={account.DEBTOR_PMT_ID}
           />
         </div>
         <div className="div">
@@ -261,7 +261,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.REFERRING}
+            defaultValue={account.REFERRING}
           />
 
           <div className="beforeInput thirty">Age:</div>
@@ -270,7 +270,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.AGE}
+            defaultValue={account.AGE}
           />
         </div>
         <div className="div">
@@ -280,7 +280,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.DELINQ_1}
+            defaultValue={account.DELINQ_1}
           />
 
           <div className="beforeInput thirty">Sales Rep:</div>
@@ -289,7 +289,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.SALES_REP}
+            defaultValue={account.SALES_REP}
           />
         </div>
       </div>
@@ -303,7 +303,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.BANK_ACCT_NAME}
+            defaultValue={account.BANK_ACCT_NAME}
           />
           <div className="beforeInput thirty">Bank Routing:</div>
           <input
@@ -311,7 +311,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.BANK_ROUTING}
+            defaultValue={account.BANK_ROUTING}
           />
         </div>
         <div className="div">
@@ -321,7 +321,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.BANK_ACCT_NUMBER}
+            defaultValue={account.BANK_ACCT_NUMBER}
           />
           <div className="beforeInput thirty">Last Payment:</div>
           <input
@@ -329,7 +329,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.LAST_PAYMENT}
+            defaultValue={account.LAST_PAYMENT}
           />
         </div>
         <div className="div">
@@ -339,7 +339,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.ORIGINAL_CHECK_NUMBER}
+            defaultValue={account.ORIGINAL_CHECK_NUMBER}
           />{" "}
           <div className="beforeInput thirty">Product:</div>
           <input
@@ -347,7 +347,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PRODUCT}
+            defaultValue={account.PRODUCT}
           />
         </div>
         <div className="subTitle goldColor">Documents</div>
@@ -358,7 +358,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.GENERATE_DEBTOR_DOCUMENT_NOTIFICATIONS}
+            defaultValue={account.GENERATE_DEBTOR_DOCUMENT_NOTIFICATIONS}
           />
           <div className="beforeInput thirty">PDF:</div>
           <input
@@ -366,7 +366,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PDF}
+            defaultValue={account.PDF}
           />
         </div>
         <div className="subTitle goldColor">DOB and SSN</div>
@@ -377,7 +377,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.DOB}
+            defaultValue={account.DOB}
           />
           <div className="beforeInput thirty">SSN:</div>
           <input
@@ -385,7 +385,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.SSN}
+            defaultValue={account.SSN}
           />{" "}
         </div>
         <div className="div">
@@ -395,7 +395,7 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.ACTION_CODES}
+            defaultValue={account.ACTION_CODES}
           />
 
           <div className="beforeInput thirty">Letter Flows:</div>
@@ -404,13 +404,13 @@ function TestAccount({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.LETTER_FLOWS}
+            defaultValue={account.LETTER_FLOWS}
           />
         </div>
       </div>
-      <Others object={object} handleCopyClick={handleCopyClick} />
-      <TLO object={object} handleCopyClick={handleCopyClick} />
-      <Relatives object={object} handleCopyClick={handleCopyClick} />
+      <Others account={account} handleCopyClick={handleCopyClick} />
+      <TLO account={account} handleCopyClick={handleCopyClick} />
+      <Relatives account={account} handleCopyClick={handleCopyClick} />
     </div>
   );
 }

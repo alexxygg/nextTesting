@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import NewNote from "./NewNote";
-function Notes({ object }) {
-  const [allNotes, setAllNotes] = useState(object.NOTES || []);
+function Notes({ account }) {
+  const [allNotes, setAllNotes] = useState(account.notes || []);
 
   const updateNotes = (newNotes) => {
     setAllNotes(newNotes);
@@ -28,7 +28,7 @@ function Notes({ object }) {
           </Fragment>
         ))}
       </div>
-      <NewNote object={object} updateNotes={updateNotes} />
+      <NewNote account={account} updateNotes={updateNotes} />
     </div>
   );
 }

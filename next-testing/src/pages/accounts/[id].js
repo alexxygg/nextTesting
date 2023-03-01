@@ -1,27 +1,26 @@
-import React from "react";
-import Accounts from "../../components/Accounts";
-import allAccounts from "allAccounts";
+import Accounts from "@/components/Accounts";
+import allAccounts from "../../../allAccounts";
 import Footer from "@/components/Footer";
+import { supabase } from "lib/supabaseClient";
+export async function getServerSideProps({ params }) {
+  const { data, error } = await supabase
+    .from("accounts")
+    .select()
+    .eq("id", params.id)
+    .single();
 
-export async function getStaticPaths() {
-  const paths = allAccounts.map((account) => ({
-    params: { id: account.id.toString() },
-  }));
+  if (error) {
+    console.log(error);
+    return { notFound: true };
+  }
 
-  return { paths, fallback: false };
+  return { props: { account: data } };
 }
 
-export async function getStaticProps({ params }) {
-  const res = await fetch(`http://localhost:3000/api/${params.id}`);
-  const object = await res.json();
-
-  return { props: { object: object } };
-}
-
-function AccountsPage({ object }) {
+function AccountsPage({ account }) {
   return (
     <>
-      <Accounts object={object} />
+      {account && <Accounts account={account} />}
       <Footer />
     </>
   );

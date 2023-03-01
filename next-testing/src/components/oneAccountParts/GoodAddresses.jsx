@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-const GoodAddresses = ({ object, handleCopyClick }) => {
+const GoodAddresses = ({ account, handleCopyClick }) => {
   const [newAddress, setNewAddress] = useState("");
   const [newAddressList, setNewAddressList] = useState(
-    object.TLO_ADDRESS_LIST || []
+    account.tloaddresslist || []
   );
 
   const handleAddAddress = (e) => {
     e.preventDefault();
     setNewAddressList([...newAddressList, newAddress]);
-    object.TLO_ADDRESS_LIST = [...newAddressList, newAddress];
+    account.tloaddresslist = [...newAddressList, newAddress];
     setNewAddress("");
   };
 

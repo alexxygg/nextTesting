@@ -2,28 +2,28 @@ import React from "react";
 import { useState } from "react";
 import allStatusCodes from "../../../allStatusCodes";
 
-function StatusComp({ object }) {
+function StatusComp({ account }) {
   const [statusCode, setStatusCode] = useState({
     STATUS_DISPOSITION: allStatusCodes[0],
   });
 
   // GENERATE A NOTE WHEN STATUS IS CHANGED
-  function addNoteToObject(notesObject, note) {
-    const updatedNotes = [...notesObject.NOTES, note];
-    return { ...notesObject, NOTES: updatedNotes };
+  function addNoteToArray(notesArray, note) {
+    const updatedNotes = [...notesArray.NOTES, note];
+    return { ...notesArray, NOTES: updatedNotes };
   }
 
   const handleDispositionChange = (event) => {
     const value = event.target.value;
     setStatusCode(value);
-    const updatedObject = { ...object, STATUS: value };
+    const updatedObject = { ...account, STATUS: value };
     const newNote = {
       note: `Status changed to ${value}`,
-      id: `${object.NOTES.length + 1}`,
+      id: `${account.NOTES.length + 1}`,
       timestamp: new Date().toLocaleString(),
     };
-    const updatedNotesObject = addNoteToObject(updatedObject, newNote);
-    object = updatedNotesObject; // optional: update the object prop
+    const updatedNotesObject = addNoteToArray(updatedObject, newNote);
+    account = updatedNotesObject; // optional: update the object prop
   };
 
   return (
@@ -33,7 +33,7 @@ function StatusComp({ object }) {
         <select
           className="maxContent"
           onChange={handleDispositionChange}
-          defaultValue={object.STATUS}
+          defaultValue={account.STATUS}
         >
           {allStatusCodes.map((option) => (
             <option key={option} value={option}>

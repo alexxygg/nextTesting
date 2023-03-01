@@ -4,7 +4,7 @@ import DispoSummary from "./DispoSummary";
 
 import allDispositions from "../../../../../allDispositions";
 
-function Relatives({ object, handleCopyClick }) {
+function Relatives({ account, handleCopyClick }) {
   //copy to clipboard
   const handleClick = (e) => {
     navigator.clipboard.writeText(e.target.value);
@@ -49,7 +49,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_1}
+            defaultValue={account.RELATIVE_1}
           />
           <div className="beforeInput twenty">R1 Address:</div>
           <input
@@ -57,7 +57,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_1_ADDY}
+            defaultValue={account.RELATIVE_1_ADDY}
           />
         </div>
         <div className="div">
@@ -67,7 +67,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_2}
+            defaultValue={account.RELATIVE_2}
           />
           <div className="beforeInput twenty">R2 Address:</div>
           <input
@@ -75,7 +75,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_2_ADDY}
+            defaultValue={account.RELATIVE_2_ADDY}
           />{" "}
         </div>
         <div className="div">
@@ -85,7 +85,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_3}
+            defaultValue={account.RELATIVE_3}
           />
           <div className="beforeInput twenty">R3 Address:</div>
           <input
@@ -93,7 +93,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_3_ADDY}
+            defaultValue={account.RELATIVE_3_ADDY}
           />
         </div>
         <div className="div">
@@ -103,7 +103,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_4}
+            defaultValue={account.RELATIVE_4}
           />
           <div className="beforeInput twenty">R4 Address:</div>
           <input
@@ -111,7 +111,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_4_ADDY}
+            defaultValue={account.RELATIVE_4_ADDY}
           />{" "}
         </div>
         <div className="div">
@@ -121,7 +121,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_5}
+            defaultValue={account.RELATIVE_5}
           />
           <div className="beforeInput twenty">R5 Address:</div>
           <input
@@ -129,7 +129,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="thirty"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_5_ADDY}
+            defaultValue={account.RELATIVE_5_ADDY}
           />
         </div>
         <div className="subTitle">Contact</div>
@@ -143,7 +143,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_1_PH1}
+            defaultValue={account.RELATIVE_1_PH1}
           />
           <div className="beforeInput sixth">
             R1 2 &nbsp; <img src="/newNumber.png" className="smallImg2" />
@@ -153,7 +153,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_1_PH2}
+            defaultValue={account.RELATIVE_1_PH2}
           />
           <div className="beforeInput sixth">
             R1 3 &nbsp; <img src="/newNumber.png" className="smallImg2" />
@@ -163,7 +163,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_1_PH3}
+            defaultValue={account.RELATIVE_1_PH3}
           />
         </div>
         <div className="disposition">
@@ -217,7 +217,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_2_PH1}
+            defaultValue={account.RELATIVE_2_PH1}
           />
 
           <div className="beforeInput sixth">
@@ -228,7 +228,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_2_PH2}
+            defaultValue={account.RELATIVE_2_PH2}
           />
           <div className="beforeInput sixth">
             R2 3 &nbsp; <img src="/newNumber.png" className="smallImg2" />
@@ -238,7 +238,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_2_PH3}
+            defaultValue={account.RELATIVE_2_PH3}
           />
         </div>
         <div className="disposition">
@@ -292,7 +292,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_3_PH1}
+            defaultValue={account.RELATIVE_3_PH1}
           />
           <div className="beforeInput sixth">
             R3 2 &nbsp; <img src="/newNumber.png" className="smallImg2" />
@@ -302,7 +302,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_3_PH2}
+            defaultValue={account.RELATIVE_3_PH2}
           />
           <div className="beforeInput sixth">
             R3 3 &nbsp;
@@ -313,7 +313,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_3_PH3}
+            defaultValue={account.RELATIVE_3_PH3}
           />
         </div>
         <div className="disposition">
@@ -367,7 +367,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_4_PH1}
+            defaultValue={account.RELATIVE_4_PH1}
           />
           <div className="beforeInput sixth">
             R4 2 &nbsp;
@@ -378,7 +378,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_4_PH2}
+            defaultValue={account.RELATIVE_4_PH2}
           />
           <div className="beforeInput sixth">
             R4 3 &nbsp;
@@ -389,7 +389,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_4_PH3}
+            defaultValue={account.RELATIVE_4_PH3}
           />
         </div>
         <div className="disposition">
@@ -444,7 +444,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_5_PH1}
+            defaultValue={account.RELATIVE_5_PH1}
           />
           <div className="beforeInput sixth">
             R5 2 &nbsp;
@@ -455,7 +455,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_5_PH2}
+            defaultValue={account.RELATIVE_5_PH2}
           />
           <div className="beforeInput sixth">
             R5 3 &nbsp;
@@ -466,7 +466,7 @@ function Relatives({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.RELATIVE_5_PH3}
+            defaultValue={account.RELATIVE_5_PH3}
           />
         </div>
         <div className="disposition">
@@ -513,11 +513,11 @@ function Relatives({ object, handleCopyClick }) {
         </div>
         <DispoCopyNote
           selectedDispositions={selectedDispositions}
-          object={object}
+          account={account}
         />
         <DispoSummary
           selectedDispositions={selectedDispositions}
-          object={object}
+          account={account}
         />
       </div>
     </>

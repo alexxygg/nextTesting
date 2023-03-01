@@ -1,7 +1,7 @@
 import React from "react";
 import allAccounts from "../../../allAccounts";
 import SearchBar from "../SearchBar";
-function Header2({ object }) {
+function Header2({ account }) {
   return (
     <>
       {" "}
@@ -33,19 +33,23 @@ function Header2({ object }) {
             </a>{" "}
           </div>
         </div>
-        <a className="a" href={`/accounts/${object.id - 1}`}>
-          <img src="/previous.png" className="img3" />
-        </a>{" "}
+        {Number(account.id) > 1 && (
+          <a className="a" href={`/accounts/${Number(account.id) - 1}`}>
+            <img src="/previous.png" className="img3" />
+          </a>
+        )}
         <div>
-          Account {object.id} of {allAccounts.length}
+          Account {account.id} of {allAccounts.length}
         </div>
-        <a className="a" href={`/accounts/${object.id + 1}`}>
-          <img src="/next.png" className="img3" />
-        </a>
-        {/* <a className="a" href={`/accounts/${object.id + 1}`}>
+        {Number(account.id) < allAccounts.length && (
+          <a className="a" href={`/accounts/${Number(account.id) + 1}`}>
+            <img src="/next.png" className="img3" />
+          </a>
+        )}
+        {/* <a className="a" href={`/accounts/${account.id + 1}`}>
         <img src="/skip.png" title="Skip to Next Account" />
       </a> */}
-        <a className="a" href={`/accountsList`}>
+        <a className="a" href={`/accounts`}>
           <img src="/worklistAllAccounts.png" className="img2" />{" "}
         </a>
         <a className="a" href={`/accountsList`}>

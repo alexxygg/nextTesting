@@ -1,13 +1,34 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import TestAccount from "./oneAccountParts/TestAccount";
 import Header from "./oneAccountParts/Header";
 import Header2 from "./oneAccountParts/Header2";
 import Notes from "./oneAccountParts/Notes";
-// import Tabs from "./oneAccountParts/Tabs";
 import AddThingsSection from "./oneAccountParts/AddThingsSection";
 import HeaderOtherLinks from "./HeaderOtherLinks";
-function Accounts({ object }) {
+import { useRouter } from "next/router";
+import { supabase } from "../../lib/supabaseClient";
+
+function Accounts() {
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [account, setAccount] = useState(null);
+  const router = useRouter();
+  const { id } = router.query;
+
+  useEffect(() => {
+    async function fetchAccount() {
+      const { data, error } = await supabase
+        .from("accounts")
+        .select()
+        .eq("id", id)
+        .single();
+      if (error) {
+        console.log(error);
+      } else {
+        setAccount(data);
+      }
+    }
+    fetchAccount();
+  }, [id]);
 
   const handleCopyClick = () => {
     setShowConfirmation(true);
@@ -16,22 +37,28 @@ function Accounts({ object }) {
 
   return (
     <>
-      <div className="navbar">
-        <HeaderOtherLinks />
-        <Header object={object} />
-        {/* not ready      
-          <Tabs object={object} /> */}
-        <Header2 object={object} />
-      </div>
-      <div id="padded">
-        <TestAccount object={object} handleCopyClick={handleCopyClick} />
-        <AddThingsSection object={object} handleCopyClick={handleCopyClick} />
-        <Notes object={object} />
-        <div id="popUp" className={showConfirmation ? "show" : ""}>
-          Copied!
-        </div>
-      </div>
+      {account && (
+        <>
+          <div className="navbar">
+            <HeaderOtherLinks />
+            <Header account={account} />
+            <Header2 account={account} />
+          </div>
+          <div id="padded">
+            <TestAccount account={account} handleCopyClick={handleCopyClick} />
+            <AddThingsSection
+              account={account}
+              handleCopyClick={handleCopyClick}
+            />
+            <Notes account={account} />
+            <div id="popUp" className={showConfirmation ? "show" : ""}>
+              Copied!
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
+
 export default Accounts;

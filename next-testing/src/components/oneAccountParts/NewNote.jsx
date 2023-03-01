@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function NewNote({ object, updateNotes }) {
-  const [allNotes, setAllNotes] = useState(object.NOTES || []);
+function NewNote({ account, updateNotes }) {
+  const [allNotes, setAllNotes] = useState(account.NOTES || []);
   const [input, setInput] = useState("");
 
   const [isImportant, setIsImportant] = useState(false);

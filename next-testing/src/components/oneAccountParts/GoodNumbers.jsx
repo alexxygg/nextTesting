@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function GoodNumbers({ object, handleCopyClick }) {
-  const [GOOD_NUMBERS, SET_GOOD_NUMBERS] = useState(object.GOOD_NUMBERS || []);
+function GoodNumbers({ account, handleCopyClick }) {
+  const [goodNumbers, SET_goodNumbers] = useState(account.goodnumbers || []);
   const [newNumber, setNewNumber] = useState({
     number: "",
     type: "",
@@ -9,7 +9,7 @@ function GoodNumbers({ object, handleCopyClick }) {
   });
 
   const handleAddNumber = () => {
-    GOOD_NUMBERS.push(newNumber);
+    goodNumbers.push(newNumber);
     setNewNumber({ number: "", type: "", area: "" });
   };
 
@@ -23,18 +23,14 @@ function GoodNumbers({ object, handleCopyClick }) {
     <div className="addNumberDiv">
       <div className="title ">Good Numbers:</div>
       <div className="allGoodNumbers">
-        {GOOD_NUMBERS.map((number, index) => (
+        {goodNumbers.map((each, index) => (
           <div key={index} className="div">
             <img src="/newNumber.png" />
-            <input
-              readOnly
-              onClick={handleClick}
-              defaultValue={number.number}
-            />
+            <input readOnly onClick={handleClick} defaultValue={each.number} />
             <img src="/location.png" />
-            <div>{number.type}</div>
+            <div>{each.type}</div>
             <img src="/timeZone.png" />
-            <div>{number.area}</div>{" "}
+            <div>{each.area}</div>{" "}
           </div>
         ))}
       </div>{" "}

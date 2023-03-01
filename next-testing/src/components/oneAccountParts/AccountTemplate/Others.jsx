@@ -1,6 +1,6 @@
 import React from "react";
 
-function Others({ object, handleCopyClick }) {
+function Others({ account, handleCopyClick }) {
   //copy to clipboard
   const handleClick = (e) => {
     navigator.clipboard.writeText(e.currentTarget.value);
@@ -18,7 +18,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.ITEM_A}
+            defaultValue={account.ITEM_A}
           />
           <div className="beforeInput sixth">Item B:</div>
           <input
@@ -26,7 +26,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.ITEM_B}
+            defaultValue={account.ITEM_B}
           />
 
           <div className="beforeInput sixth">Item C:</div>
@@ -35,7 +35,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.ITEM_C}
+            defaultValue={account.ITEM_C}
           />
         </div>
         <div className="subTitle goldColor">Props</div>
@@ -46,7 +46,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PROP_OWNER_ADDRESS}
+            defaultValue={account.PROP_OWNER_ADDRESS}
           />
 
           <div className="beforeInput thirty">Prop:</div>
@@ -55,7 +55,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PROP}
+            defaultValue={account.PROP}
           />
         </div>
         <div className="div">
@@ -65,7 +65,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PROP_LOAN_AMOUNT}
+            defaultValue={account.PROP_LOAN_AMOUNT}
           />
 
           <div className="beforeInput thirty ">Prop Owner Lender:</div>
@@ -74,7 +74,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.PROP_OWNER_LENDER}
+            defaultValue={account.PROP_OWNER_LENDER}
           />
         </div>
         <div className="subTitle">Co-Signer</div>
@@ -85,7 +85,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.CO_SIGNER_FIRST}
+            defaultValue={account.CO_SIGNER_FIRST}
           />
 
           <div className="beforeInput sixth">Co-Signer Last:</div>
@@ -94,7 +94,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.CO_SIGNER_LAST}
+            defaultValue={account.CO_SIGNER_LAST}
           />
 
           <div className="beforeInput sixth">Co-Signer SSN:</div>
@@ -103,7 +103,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.CO_SIGNER_SSN}
+            defaultValue={account.CO_SIGNER_SSN}
           />
         </div>
         <div className="subTitle">Legal</div>
@@ -114,7 +114,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.ATTORNEY}
+            defaultValue={account.ATTORNEY}
           />
 
           <div className="beforeInput sixth">Bankruptcy:</div>
@@ -123,7 +123,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.BANKRUPTCY}
+            defaultValue={account.BANKRUPTCY}
           />
 
           <div className="beforeInput sixth">Discharged:</div>
@@ -132,7 +132,7 @@ function Others({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.DISCHARGED}
+            defaultValue={account.DISCHARGED}
           />
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import allAccounts from "../../allAccounts";
-import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -105,10 +104,10 @@ const SearchBar = () => {
                   <div>DOB</div>
                 </div>
                 {searchResults.map((result) => (
-                  <Link
+                  <a
                     key={result.id}
                     className="accountFromResults"
-                    to={`/accounts/${result.id}`}
+                    href={`/accounts/${result.id}`}
                   >
                     <div>{result.id}</div>
                     <div>{result.ACCOUNT_NUMBER}</div>
@@ -116,7 +115,7 @@ const SearchBar = () => {
                     <div>{result.TLO_PHONE}</div>
                     <div>{result.SSN}</div>
                     <div>{result.DOB}</div>
-                  </Link>
+                  </a>
                 ))}
                 <button onClick={clearSearch} className="clearSearch">
                   Clear Search

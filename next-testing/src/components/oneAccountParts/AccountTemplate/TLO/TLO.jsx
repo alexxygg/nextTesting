@@ -4,7 +4,7 @@ import DispoCopyNote from "./DispoCopyNote";
 import DispoSummary from "./DispoSummary";
 import allDispositions from "../../../../../allDispositions";
 
-function TLO({ object, handleCopyClick }) {
+function TLO({ account, handleCopyClick }) {
   const [selectedDispositions, setSelectedDispositions] = useState({
     TLO_1_DISPOSITION: allDispositions[0],
     TLO_2_DISPOSITION: allDispositions[0],
@@ -32,22 +32,19 @@ function TLO({ object, handleCopyClick }) {
       <div className="title">TLO</div>
       <div className="section">
         <div className="subTitle">Address</div>
-        {object.TLO_ADDRESS_LIST &&
-          object.TLO_ADDRESS_LIST.map((address, index) => (
-            <div className="div">
-              {" "}
-              <div key={index} className="beforeInput thirty">
-                Address {index + 1}:
-              </div>
-              <input
-                readOnly
-                type="text"
-                className="seventy"
-                onClick={handleClick}
-                defaultValue={address}
-              />
-            </div>
-          ))}
+        {account.TLO_ADDRESS_LIST && (
+          <div className="div">
+            {" "}
+            <div className="beforeInput thirty">Address :</div>
+            <input
+              readOnly
+              type="text"
+              className="seventy"
+              onClick={handleClick}
+              defaultValue={account.TLO_ADDRESS_LIST}
+            />
+          </div>
+        )}
         <div className="subTitle goldColor">Employer</div>
         <div className="div">
           <div className="beforeInput sixth">Employer:</div>
@@ -56,7 +53,7 @@ function TLO({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.EMPLOYER}
+            defaultValue={account.EMPLOYER}
           />
 
           <div className="beforeInput sixth">TLO POE:</div>
@@ -65,7 +62,7 @@ function TLO({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.TLO_POE}
+            defaultValue={account.TLO_POE}
           />
 
           <div className="beforeInput sixth">TLO POE #:</div>
@@ -74,7 +71,7 @@ function TLO({ object, handleCopyClick }) {
             type="text"
             className="sixth"
             onClick={handleClick}
-            defaultValue={object.TLO_POE_NUMBER}
+            defaultValue={account.TLO_POE_NUMBER}
           />
         </div>
         <div className="subTitle">Rent</div>
@@ -85,7 +82,7 @@ function TLO({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.RENT_AMOUNT}
+            defaultValue={account.RENT_AMOUNT}
           />
 
           <div className="beforeInput thirty">Landlord Phone #:</div>
@@ -94,7 +91,7 @@ function TLO({ object, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={object.LANDLORD_PHONE_NUMBER}
+            defaultValue={account.LANDLORD_PHONE_NUMBER}
           />
         </div>
         <div className="subTitle">Contact</div>
@@ -106,7 +103,7 @@ function TLO({ object, handleCopyClick }) {
               readOnly
               type="text"
               onClick={handleClick}
-              defaultValue={object.TLO_PHONE}
+              defaultValue={account.TLO_PHONE}
             />
           </div>
           <div className="beforeInput div2 ">
@@ -116,7 +113,7 @@ function TLO({ object, handleCopyClick }) {
               readOnly
               type="text"
               onClick={handleClick}
-              defaultValue={object.TLO_PHONE_2}
+              defaultValue={account.TLO_PHONE_2}
             />
           </div>
           <div className="beforeInput div2 ">
@@ -126,7 +123,7 @@ function TLO({ object, handleCopyClick }) {
               readOnly
               type="text"
               onClick={handleClick}
-              defaultValue={object.TLO_PHONE_3}
+              defaultValue={account.TLO_PHONE_3}
             />
           </div>
           <div className="beforeInput div2 ">
@@ -136,7 +133,7 @@ function TLO({ object, handleCopyClick }) {
               readOnly
               type="text"
               onClick={handleClick}
-              defaultValue={object.TLO_PHONE_4}
+              defaultValue={account.TLO_PHONE_4}
             />
           </div>
           <div className="beforeInput div2 ">
@@ -146,7 +143,7 @@ function TLO({ object, handleCopyClick }) {
               readOnly
               type="text"
               onClick={handleClick}
-              defaultValue={object.TLO_PHONE_5}
+              defaultValue={account.TLO_PHONE_5}
             />
           </div>
         </div>
@@ -222,11 +219,11 @@ function TLO({ object, handleCopyClick }) {
         </div>
         <DispoCopyNote
           selectedDispositions={selectedDispositions}
-          object={object}
+          account={account}
         />
         <DispoSummary
           selectedDispositions={selectedDispositions}
-          object={object}
+          account={account}
         />
       </div>
     </>
