@@ -3,7 +3,6 @@ import React, { useState, Fragment } from "react";
 import DispoCopyNote from "./DispoCopyNote";
 import DispoSummary from "./DispoSummary";
 import allDispositions from "../../../../../allDispositions";
-
 function TLO({ account, handleCopyClick }) {
   const [selectedDispositions, setSelectedDispositions] = useState({
     TLO_1_DISPOSITION: allDispositions[0],
@@ -32,19 +31,22 @@ function TLO({ account, handleCopyClick }) {
       <div className="title">TLO</div>
       <div className="section">
         <div className="subTitle">Address</div>
-        {account.TLO_ADDRESS_LIST && (
-          <div className="div">
-            {" "}
-            <div className="beforeInput thirty">Address :</div>
-            <input
-              readOnly
-              type="text"
-              className="seventy"
-              onClick={handleClick}
-              defaultValue={account.TLO_ADDRESS_LIST}
-            />
-          </div>
-        )}
+        {account.tloAddressList &&
+          account.tloAddressList.map((each, index) => {
+            return (
+              <div className="div" key={index}>
+                {" "}
+                <div className="beforeInput thirty">Address</div>
+                <input
+                  readOnly
+                  type="text"
+                  className="seventy"
+                  onClick={handleClick}
+                  defaultValue={each}
+                />
+              </div>
+            );
+          })}
         <div className="subTitle goldColor">Employer</div>
         <div className="div">
           <div className="beforeInput sixth">Employer:</div>
@@ -220,6 +222,7 @@ function TLO({ account, handleCopyClick }) {
         <DispoCopyNote
           selectedDispositions={selectedDispositions}
           account={account}
+          handleCopyClick={handleCopyClick}
         />
         <DispoSummary
           selectedDispositions={selectedDispositions}

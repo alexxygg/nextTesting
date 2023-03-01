@@ -4,13 +4,16 @@ import allAccounts from "../../allAccounts";
 import { Link } from "react-router-dom";
 import HeaderOtherLinks from "./HeaderOtherLinks";
 
+import { supabase } from "../../lib/supabaseClient"; // Import Supabase client
+
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchBy, setSearchBy] = useState("id");
   const [searchResults, setSearchResults] = useState(false);
   const [showNoMatches, setShowNoMatches] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    // Use async/await for Supabase client calls
     event.preventDefault();
 
     // If the search term is empty, set the search results to false
@@ -20,28 +23,19 @@ const SearchPage = () => {
       return;
     }
 
-    // Filter the list of objects based on the selected search option and search term
-    let results = allAccounts.filter((object) => {
-      switch (searchBy) {
-        case "id":
-          return object.id.toString().includes(searchTerm);
-        case "ACCOUNT_NUMBER":
-          return object.ACCOUNT_NUMBER.toString().includes(searchTerm);
-        case "NAME":
-          return object.NAME.toString().includes(searchTerm);
-        case "TLO_PHONE":
-          return object.TLO_PHONE.toString().includes(searchTerm);
-        case "SSN":
-          return object.SSN.toString().includes(searchTerm);
-        case "DOB":
-          return object.DOB.toString().includes(searchTerm);
-        default:
-          return [];
-      }
-    });
+    // Fetch data from Supabase table
+    const { data, error } = await supabase
+      .from("accounts")
+      .select("*")
+      .ilike(searchBy, `%${searchTerm}%`); // Use Supabase's "ilike" to perform case-insensitive search
 
-    setSearchResults(results);
-    setShowNoMatches(results.length === 0);
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    setSearchResults(data);
+    setShowNoMatches(data.length === 0);
   };
 
   const clearSearch = () => {
@@ -81,7 +75,7 @@ const SearchPage = () => {
               >
                 <option value="id">id</option>
                 <option value="ACCOUNT_NUMBER">Account #</option>
-                <option value="NAME">Name</option>
+                <option value="name">Name</option>
                 <option value="TLO_PHONE">TLO Phone #</option>
                 <option value="SSN">SSN</option>
                 <option value="DOB">DOB</option>
@@ -117,7 +111,7 @@ const SearchPage = () => {
                   >
                     <div>{result.id}</div>
                     <div>{result.ACCOUNT_NUMBER}</div>
-                    <div>{result.NAME}</div>
+                    <div>{result.name}</div>
                     <div>{result.TLO_PHONE}</div>
                     <div>{result.SSN}</div>
                     <div>{result.DOB}</div>

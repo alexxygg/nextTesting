@@ -1,8 +1,23 @@
-function DispoCopyNote({ account, selectedDispositions }) {
+function DispoCopyNote({ account, selectedDispositions, handleCopyClick }) {
   const noteToCopy = `${account.TLO_PHONE} - ${selectedDispositions.TLO_1_DISPOSITION} , ${account.TLO_PHONE_2} - ${selectedDispositions.TLO_2_DISPOSITION} , ${account.TLO_PHONE_3} - ${selectedDispositions.TLO_3_DISPOSITION} , ${account.TLO_PHONE_4} - ${selectedDispositions.TLO_4_DISPOSITION} , ${account.TLO_PHONE_5} - ${selectedDispositions.TLO_5_DISPOSITION}`;
 
-  const copyDispositionsNote = () => {
-    navigator.clipboard.writeText(noteToCopy);
+  const copyDispositionsNote = async () => {
+    try {
+      await navigator.clipboard.writeText(noteToCopy);
+      document.getElementById("popUp").style.backgroundColor = "gold";
+      document.getElementById("popUp").style.color = "black";
+      document.getElementById("popUp").style.fontWeight = "900";
+      document.getElementById("popUp").textContent = "Summary Copied!";
+      setTimeout(() => {
+        document.getElementById("popUp").style.backgroundColor = "";
+        document.getElementById("popUp").style.color = "white";
+
+        document.getElementById("popUp").textContent = "Copied!";
+      }, 2000);
+      await handleCopyClick();
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <>

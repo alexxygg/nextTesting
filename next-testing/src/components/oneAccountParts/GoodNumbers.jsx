@@ -1,15 +1,29 @@
 import React, { useState } from "react";
+import { supabase } from "../../../lib/supabaseClient";
 
 function GoodNumbers({ account, handleCopyClick }) {
-  const [goodNumbers, SET_goodNumbers] = useState(account.goodnumbers || []);
+  const [goodNumbers, setGoodNumbers] = useState(account.goodNumbers || []);
   const [newNumber, setNewNumber] = useState({
     number: "",
     type: "",
     area: "",
   });
 
-  const handleAddNumber = () => {
-    goodNumbers.push(newNumber);
+  const handleAddNumber = async (e) => {
+    e.preventDefault();
+    const updatedAccount = {
+      ...account,
+      goodNumbers: [...goodNumbers, newNumber],
+    };
+    const { data, error } = await supabase
+      .from("accounts")
+      .update(updatedAccount)
+      .eq("id", account.id);
+    if (error) {
+      console.error(error);
+      return;
+    }
+    setGoodNumbers([...goodNumbers, newNumber]);
     setNewNumber({ number: "", type: "", area: "" });
   };
 
@@ -34,12 +48,7 @@ function GoodNumbers({ account, handleCopyClick }) {
           </div>
         ))}
       </div>{" "}
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          handleAddNumber();
-        }}
-      >
+      <form onSubmit={handleAddNumber}>
         <div className="div">
           <img src="/newNumber.png" />
           &nbsp;
@@ -86,4 +95,5 @@ function GoodNumbers({ account, handleCopyClick }) {
     </div>
   );
 }
+
 export default GoodNumbers;

@@ -1,18 +1,28 @@
 import React, { useState } from "react";
-
+import { supabase } from "../../../lib/supabaseClient";
 const GoodAddresses = ({ account, handleCopyClick }) => {
   const [newAddress, setNewAddress] = useState("");
-  const [newAddressList, setNewAddressList] = useState(
-    account.tloaddresslist || []
+  const [tloAddressList, setTloAddressList] = useState(
+    account.tloAddressList || []
   );
 
-  const handleAddAddress = (e) => {
+  const handleAddAddress = async (e) => {
     e.preventDefault();
-    setNewAddressList([...newAddressList, newAddress]);
-    account.tloaddresslist = [...newAddressList, newAddress];
+    const updatedAccount = {
+      ...account,
+      tloAddressList: [...tloAddressList, newAddress],
+    };
+    const { data, error } = await supabase
+      .from("accounts")
+      .update(updatedAccount)
+      .eq("id", account.id);
+    if (error) {
+      console.error(error);
+      return;
+    }
+    setTloAddressList([...tloAddressList, newAddress]);
     setNewAddress("");
   };
-
   //copy to clipboard
   const handleClick = (e) => {
     navigator.clipboard.writeText(e.currentTarget.value);
@@ -22,9 +32,9 @@ const GoodAddresses = ({ account, handleCopyClick }) => {
   return (
     <div className="addAddressDiv">
       <div className="title ">TLO Address List</div>
-      <div className="newAddressList">
+      <div className="tloAddressList">
         <div className="allGoodAddresses">
-          {newAddressList.map((address, index) => (
+          {tloAddressList.map((address, index) => (
             <div key={index}>
               {" "}
               <img src="/address.png" className="smallImg" />

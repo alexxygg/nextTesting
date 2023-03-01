@@ -1,22 +1,30 @@
 import React, { useState } from "react";
+import { supabase } from "../../../lib/supabaseClient";
 
 function NewNote({ account, updateNotes }) {
-  const [allNotes, setAllNotes] = useState(account.NOTES || []);
+  const [allNotes, setAllNotes] = useState(account.notes || []);
   const [input, setInput] = useState("");
-
   const [isImportant, setIsImportant] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const newNotes = [
-      ...allNotes,
-      {
-        id: allNotes.length + 1,
-        note: input,
-        timestamp: new Date().toLocaleString(),
-        isImportant: isImportant,
-      },
-    ];
+    const newNote = {
+      id: allNotes.length + 1,
+      note: input,
+      timestamp: new Date().toLocaleString(),
+      isImportant: isImportant,
+    };
+    const { data, error } = await supabase
+      .from("accounts")
+      .update({
+        notes: [...allNotes, newNote],
+      })
+      .eq("id", account.id);
+    if (error) {
+      console.error(error);
+      return;
+    }
+    const newNotes = [...allNotes, newNote];
     setAllNotes(newNotes);
     updateNotes(newNotes);
     setInput("");

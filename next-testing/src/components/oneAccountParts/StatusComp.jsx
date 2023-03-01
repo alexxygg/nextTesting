@@ -1,29 +1,33 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import allStatusCodes from "../../../allStatusCodes";
-
+import { supabase } from "lib/supabaseClient";
 function StatusComp({ account }) {
-  const [statusCode, setStatusCode] = useState({
-    STATUS_DISPOSITION: allStatusCodes[0],
-  });
+  const [statusCode, setStatusCode] = useState(account.STATUS);
 
   // GENERATE A NOTE WHEN STATUS IS CHANGED
-  function addNoteToArray(notesArray, note) {
-    const updatedNotes = [...notesArray.NOTES, note];
-    return { ...notesArray, NOTES: updatedNotes };
-  }
+  // function addNoteToArray(notesArray, note) {
+  //   const updatedNotes = [...notesArray.notes, note];
+  //   return { ...notesArray, notes: updatedNotes };
+  // }
 
-  const handleDispositionChange = (event) => {
-    const value = event.target.value;
-    setStatusCode(value);
-    const updatedObject = { ...account, STATUS: value };
-    const newNote = {
-      note: `Status changed to ${value}`,
-      id: `${account.NOTES.length + 1}`,
-      timestamp: new Date().toLocaleString(),
-    };
-    const updatedNotesObject = addNoteToArray(updatedObject, newNote);
-    account = updatedNotesObject; // optional: update the object prop
+  // update account status
+  const updateAccountStatus = async (event) => {
+    event.preventDefault();
+    // get the updated status value from the select element
+    const newStatusCode = event.target.value;
+    // call supabase to update the account status in the database
+    const { data, error } = await supabase
+      .from("accounts")
+      .update({
+        STATUS: newStatusCode,
+      })
+      .eq("id", account.id);
+    if (error) {
+      console.log("Error updating account:", error.message);
+    } else {
+      console.log("Account updated successfully");
+      setStatusCode(newStatusCode);
+    }
   };
 
   return (
@@ -32,8 +36,8 @@ function StatusComp({ account }) {
         <div className="beforeInput sixth">Status:</div>
         <select
           className="maxContent"
-          onChange={handleDispositionChange}
-          defaultValue={account.STATUS}
+          onChange={updateAccountStatus}
+          value={statusCode}
         >
           {allStatusCodes.map((option) => (
             <option key={option} value={option}>
