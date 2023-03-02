@@ -514,6 +514,7 @@ function Relatives({ account, handleCopyClick }) {
         <DispoCopyNote
           selectedDispositions={selectedDispositions}
           account={account}
+          handleCopyClick={handleCopyClick}
         />
         <DispoSummary
           selectedDispositions={selectedDispositions}

@@ -1,7 +1,25 @@
 import React from "react";
 import allAccounts from "../../../allAccounts";
 import SearchBar from "../SearchBar";
-function Header2({ account }) {
+function Header2({ account, handleSaveClick }) {
+  const changesAlert = async () => {
+    const popUp = document.getElementById("popUp");
+    try {
+      popUp.style.backgroundColor = "blue";
+      popUp.textContent = "Changes saved successfully!";
+      popUp.style.minWidth = "500px";
+      popUp.style.marginLeft = "-250px";
+      setTimeout(() => {
+        popUp.textContent = "Copied!";
+        popUp.style.backgroundColor = "red";
+        popUp.style.minWidth = "250px";
+        popUp.style.marginLeft = "-125px";
+      }, 2000);
+      await handleSaveClick();
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <>
       {" "}
@@ -64,6 +82,9 @@ function Header2({ account }) {
         <a className="a" href="/accounts/search" target="_blank">
           <img src="/search.png" alt="" className="img2" />
         </a>{" "}
+        <button className="saveChangesBtn" onClick={changesAlert}>
+          Save Changes
+        </button>{" "}
       </div>
     </>
   );

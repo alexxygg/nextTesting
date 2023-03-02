@@ -11,10 +11,20 @@ function TestAccount({ account, handleCopyClick }) {
     handleCopyClick();
   };
 
-  const importedOnDate = new Date(account.IMPORTED_ON);
-  const daysSince = Math.floor(
-    (new Date() - importedOnDate) / (1000 * 60 * 60 * 24)
-  );
+  const daysSince = () => {
+    const importedOnDate =
+      account.IMPORTED_ON === "-" ? "-" : new Date(account.IMPORTED_ON);
+    if (importedOnDate instanceof Date && !isNaN(importedOnDate)) {
+      const days = Math.floor(
+        (new Date() - importedOnDate) / (1000 * 60 * 60 * 24)
+      );
+      return `${days} days since.`;
+    } else if (importedOnDate === "-") {
+      return "-";
+    } else {
+      return "Invalid import date.";
+    }
+  };
 
   return (
     <div className="account accountFields">
@@ -35,7 +45,7 @@ function TestAccount({ account, handleCopyClick }) {
             type="text"
             className="twenty"
             onClick={handleClick}
-            defaultValue={`${daysSince} days since.`}
+            defaultValue={daysSince()}
           />
         </div>
       </div>

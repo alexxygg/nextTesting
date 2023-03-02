@@ -27,8 +27,8 @@ const SearchPage = () => {
     const { data, error } = await supabase
       .from("accounts")
       .select("*")
-      .ilike(searchBy, `%${searchTerm}%`); // Use Supabase's "ilike" to perform case-insensitive search
-
+      .ilike(searchBy, `%${searchTerm}%`)
+      .order("id"); // Use Supabase's "ilike" to perform case-insensitive search
     if (error) {
       console.error(error);
       return;

@@ -564,7 +564,8 @@ a.searchBtn {
   font-weight: bolder;
 }
 
-.weirdBtn {
+.weirdBtn,
+.saveChangesBtn {
   width: 85%;
   border-radius: 2rem;
   margin: 20px 0;
@@ -575,6 +576,41 @@ a.searchBtn {
   font-weight: bolder;
   height: 30px;
   outline: solid white 2px;
+}
+.saveChangesBtn {
+  width: max-content;
+  height: min-content;
+  margin: 0%;
+  right: 0;
+  background-color: red;
+  border-radius: 0px;
+  outline: none;
+  border: solid black 3px;
+  border-radius: 0rem 2rem 2rem 0rem;
+}
+#popUp {
+  visibility: hidden;
+  color: white;
+  background-color: red;
+  min-width: 250px;
+  margin-left: -125px;
+  border-radius: 2rem 2rem 0 0;
+  text-align: center;
+  left: 50%;
+  bottom: 27px;
+  z-index: 1;
+  position: fixed;
+  border: solid black 5px;
+  border-bottom: none;
+  font-size: medium;
+  font-weight: 700;
+}
+#popUp.show {
+  visibility: visible;
+  /* -webkit-animation: fadein 0.5s, fadeout 0.5s 1.5s;
+  animation: fadein 0.5s, fadeout 0.5s 1.5s; */
+  animation: slideIn 0.5s forwards, slideOut 0.5s 1.5s forwards;
+  z-index: 5;
 }
 
 .clearSearch {
@@ -1011,24 +1047,6 @@ select:hover {
   font-weight: 600;
 }
 
-#popUp {
-  visibility: hidden;
-  color: white;
-  background-color: red;
-  min-width: 250px;
-  margin-left: -125px;
-  border-radius: 2rem 2rem 0 0;
-  text-align: center;
-  left: 50%;
-  bottom: 27px;
-  z-index: 1;
-  position: fixed;
-  border: solid black 5px;
-  border-bottom: none;
-  font-size: medium;
-  font-weight: 700;
-}
-
 @keyframes slideIn {
   0% {
     bottom: -100px;
@@ -1045,13 +1063,6 @@ select:hover {
   100% {
     bottom: -100px;
   }
-}
-#popUp.show {
-  visibility: visible;
-  /* -webkit-animation: fadein 0.5s, fadeout 0.5s 1.5s;
-  animation: fadein 0.5s, fadeout 0.5s 1.5s; */
-  animation: slideIn 0.5s forwards, slideOut 0.5s 1.5s forwards;
-  z-index: 5;
 }
 
 .navbar {

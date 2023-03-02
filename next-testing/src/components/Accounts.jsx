@@ -35,6 +35,20 @@ function Accounts() {
     setTimeout(() => setShowConfirmation(false), 2000);
   };
 
+  const handleSaveClick = async () => {
+    const { data, error } = await supabase
+      .from("accounts")
+      .select()
+      .eq("id", id)
+      .single();
+    if (error) {
+      console.log(error);
+    } else {
+      setAccount(data);
+      handleCopyClick();
+    }
+  };
+
   return (
     <>
       {account && (
@@ -42,7 +56,9 @@ function Accounts() {
           <div className="navbar">
             <HeaderOtherLinks />
             <Header account={account} />
-            <Header2 account={account} />
+            <Header2 account={account} handleSaveClick={handleSaveClick}>
+              {" "}
+            </Header2>
           </div>
           <div id="padded">
             <TestAccount account={account} handleCopyClick={handleCopyClick} />
@@ -51,9 +67,9 @@ function Accounts() {
               handleCopyClick={handleCopyClick}
             />
             <Notes account={account} />
-            <div id="popUp" className={showConfirmation ? "show" : ""}>
-              Copied!
-            </div>
+          </div>
+          <div id="popUp" className={showConfirmation ? "show" : ""}>
+            Copied!
           </div>
         </>
       )}
