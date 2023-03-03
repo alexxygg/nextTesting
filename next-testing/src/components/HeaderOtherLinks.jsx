@@ -15,10 +15,10 @@ function HeaderOtherLinks() {
   //   ) : null;
   // };
   return (
-    <div className="otherSites">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/accounts">All Accounts</a>
+    <div className="otherSites ">
+      <a href="/about">Home/About</a>
+      <a href="/">All Accounts</a>
+      <a href="/accounts/search">Search All</a>
       {/* {ifUser(globalUser)} */}
     </div>
   );

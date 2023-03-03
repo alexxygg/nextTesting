@@ -5,8 +5,14 @@ function AboutPage() {
   return (
     <>
       <HeaderOtherLinks />
-      <div className="aboutPage">
-        <div>About Page</div>
+
+      <div id="paddedList2">
+        <div className="aboutPage">
+          <div className="header">
+            <div className="logo middle">FirePulse©</div>
+          </div>{" "}
+          <div>About Page</div>
+        </div>
       </div>
     </>
   );

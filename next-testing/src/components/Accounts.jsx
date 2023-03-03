@@ -13,6 +13,7 @@ function Accounts() {
   const [account, setAccount] = useState(null);
   const router = useRouter();
   const { id } = router.query;
+  const { user } = router.query;
 
   useEffect(() => {
     async function fetchAccount() {
@@ -55,18 +56,27 @@ function Accounts() {
         <>
           <div className="navbar">
             <HeaderOtherLinks />
-            <Header account={account} />
-            <Header2 account={account} handleSaveClick={handleSaveClick}>
+            <Header account={account} user={user} />
+            <Header2
+              account={account}
+              user={user}
+              handleSaveClick={handleSaveClick}
+            >
               {" "}
             </Header2>
           </div>
           <div id="padded">
-            <TestAccount account={account} handleCopyClick={handleCopyClick} />
-            <AddThingsSection
+            <TestAccount
               account={account}
+              user={user}
               handleCopyClick={handleCopyClick}
             />
-            <Notes account={account} />
+            <AddThingsSection
+              account={account}
+              user={user}
+              handleCopyClick={handleCopyClick}
+            />
+            <Notes account={account} user={user} />
           </div>
           <div id="popUp" className={showConfirmation ? "show" : ""}>
             Copied!

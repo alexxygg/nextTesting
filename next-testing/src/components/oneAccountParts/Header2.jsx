@@ -5,7 +5,7 @@ function Header2({ account, handleSaveClick }) {
   const changesAlert = async () => {
     const popUp = document.getElementById("popUp");
     try {
-      popUp.style.backgroundColor = "blue";
+      popUp.style.backgroundColor = "rgb(2,80,30)";
       popUp.textContent = "Changes saved successfully!";
       popUp.style.minWidth = "500px";
       popUp.style.marginLeft = "-250px";
@@ -24,7 +24,7 @@ function Header2({ account, handleSaveClick }) {
     <>
       {" "}
       <SearchBar />
-      <div className="header2">
+      <div className="header2 ">
         <a className="a" href="/search">
           <img src="/homeIcon.png" alt="" className="img2" />
         </a>

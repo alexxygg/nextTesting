@@ -19,12 +19,12 @@ function HomePage() {
       <HeaderOtherLinks />
       <div id="paddedList2">
         <div className="homepage">
-          <h1 className="featureTitle homepageTitle logo">DebtDynamic</h1>
+          <h1 className="featureTitle homepageTitle logo">FirePulse©</h1>
           <h2 className="goldColor leftAlign featureTitle">
             "Revolutionize account managing."
           </h2>{" "}
           <h3 className="leftAlign h3">
-            With DebtDynamic, you will have access to a fully customizable
+            With FirePulse©, you will have access to a fully customizable
             interface that allows you to tailor your account management to your
             specific needs. The data editing feature ensures that you can make
             changes to your accounts easily and quickly, with just a few clicks.
@@ -81,7 +81,7 @@ function HomePage() {
               today and experience the difference in your account management!
             </h2>
           </div>
-          <a href="/accountsList" className="searchBtn">
+          <a href="/accountsList" className="searchBtn borderLeft">
             Try the DEMO!
           </a>
         </div>

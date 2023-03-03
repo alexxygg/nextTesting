@@ -60,7 +60,7 @@ const SearchPage = () => {
       <HeaderOtherLinks />{" "}
       <div id="paddedList">
         <div className="header">
-          <div className="logo middle">DEBTDYNAMIC©</div>
+          <div className="logo middle">FirePulse©</div>
         </div>{" "}
         <div className="title goldColor">Search all accounts:</div>
         <div className="searchBarDivAgain">

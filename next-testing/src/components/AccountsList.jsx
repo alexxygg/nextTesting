@@ -30,7 +30,7 @@ function AccountsList() {
       <HeaderOtherLinks />{" "}
       <div id="paddedList2">
         <div className="header">
-          <div className="logo middle">DEBTDYNAMIC©</div>
+          <div className="logo middle">FirePulse©</div>
         </div>{" "}
         <div className="title goldColor">All accounts:</div>
         <div className="results">

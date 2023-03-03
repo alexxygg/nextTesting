@@ -1,60 +1,82 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { supabase } from "lib/supabaseClient";
 
-let globalUser = null; // Declare global variable outside of component
+import Link from "next/link";
 
-const setGlobalUser = (user) => {
-  globalUser = user;
-};
-
-import loginAccounts from "./loginAccounts";
-const Login = ({ loggedIn, setLoggedIn }) => {
+function Login({ user, setUser, onLoginSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    // check if user is logged in
+    if (!user && router.pathname !== "/login") {
+      window.sessionStorage.setItem("prevUrl", router.asPath);
+      router.push("/login");
+    } else if (
+      user &&
+      router.pathname === "/login" &&
+      window.sessionStorage.getItem("prevUrl")
+    ) {
+      const prevUrl = window.sessionStorage.getItem("prevUrl");
+      router.push(prevUrl);
+      window.sessionStorage.removeItem("prevUrl");
+    }
+  }, [user, router]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    for (let i = 0; i < loginAccounts.length; i++) {
-      const user = loginAccounts[i];
-      if (user.USERNAME === username && user.PASSWORD === password) {
-        setLoggedIn(true);
-        user.loggedIn = true;
-        setGlobalUser(user); // Update global variable with matched user
-        navigate("/accountsList");
-        return;
+  const loginFunction = async (event) => {
+    event.preventDefault();
+    const { data, error } = await supabase
+      .from("users")
+      .select()
+      .eq("username", username)
+      .eq("password", password);
+    if (error) {
+      alert(error);
+    } else {
+      if (data.length > 0) {
+        onLoginSuccess(); // call the onLoginSuccess prop
+        // handleLogin(user);
+        setUser(data[0]); // set the user state to the logged-in user
+        alert("Logged in successfully");
       } else {
-        setLoggedIn(false);
-        user.loggedIn = false;
-        navigate("/login");
+        alert("Invalid username or password");
       }
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
+    <div id="paddedList2">
+      <form onSubmit={loginFunction} className="loginPage">
+        <div>
+          <div> Welcome to </div>
+          <div className="logo outlineWhite boxShadowed">FirePulse©</div>
+        </div>
         <input
-          type="text"
+          type="email"
           value={username}
           onChange={(event) => setUsername(event.target.value)}
         />
-      </label>
-      <br />
-      <label>
-        Password:
         <input
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-      </label>
-      <br />
-      <button type="submit">Log In</button>
-    </form>
-  );
-};
+        <button type="submit" className="searchBtn borderLeft">
+          Sign in
+        </button>
 
-export { Login, globalUser, setGlobalUser };
+        <div>
+          <p className="glass">Not an existing user? &nbsp;</p>
+          <br />
+          <Link href="/signup" className="blue glass">
+            Sign up
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default Login;
