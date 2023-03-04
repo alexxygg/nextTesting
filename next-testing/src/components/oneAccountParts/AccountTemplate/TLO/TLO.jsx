@@ -36,7 +36,7 @@ function TLO({ account, handleCopyClick }) {
             return (
               <div className="div" key={index}>
                 {" "}
-                <div className="beforeInput thirty">Address</div>
+                <div className="beforeInput thirty">Address {index + 1}</div>
                 <input
                   readOnly
                   type="text"

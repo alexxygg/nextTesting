@@ -39,9 +39,9 @@ function GoodNumbers({ account, handleCopyClick }) {
       <div className="allGoodNumbers">
         {goodNumbers.map((each, index) => (
           <div key={index} className="div">
-            <img src="/newNumber.png" />
+            <img src="/phone2.png" />
             <input readOnly onClick={handleClick} defaultValue={each.number} />
-            <img src="/location.png" />
+            <img src="/address.png" />
             <div>{each.type}</div>
             <img src="/timeZone.png" />
             <div>{each.area}</div>{" "}
@@ -50,7 +50,7 @@ function GoodNumbers({ account, handleCopyClick }) {
       </div>{" "}
       <form onSubmit={handleAddNumber}>
         <div className="div">
-          <img src="/newNumber.png" />
+          <img src="/phone2.png" />
           &nbsp;
           <input
             placeholder="xxx-xxx-xxxx"
@@ -63,7 +63,7 @@ function GoodNumbers({ account, handleCopyClick }) {
           />
         </div>
         <div className="div">
-          <img src="/location.png" />
+          <img src="/address.png" />
           &nbsp;
           <input
             placeholder="home,cell"

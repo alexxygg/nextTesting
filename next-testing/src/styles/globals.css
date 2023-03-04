@@ -154,6 +154,7 @@ button {
   color: ghostwhite;
   transition: all 0.1s ease-in-out;
   font-family: monospace;
+  font-weight: 900;
 }
 button:hover {
   transform: translateY(-0.5px);
@@ -346,12 +347,12 @@ button:active {
 
 @media (min-width: 1000px) {
   #padded {
-    padding: 0vw 5vw;
+    padding: 0vw 10vw;
     padding-top: 130px;
   }
   #paddedList,
   #paddedList2 {
-    padding: 0vw 5vw;
+    padding: 0vw 10vw;
   }
   .loginPage > input {
     min-width: 20% !important;
@@ -363,12 +364,12 @@ button:active {
 }
 @media (min-width: 1500px) {
   #padded {
-    padding: 0vw 10vw;
+    padding: 0vw 15vw;
     padding-top: 130px;
   }
   #paddedList,
   #paddedList2 {
-    padding: 0vw 10vw;
+    padding: 0vw 15vw;
   }
 }
 .title {
@@ -450,7 +451,6 @@ button:active {
 .id,
 .time,
 .by {
-  font-weight: 400;
   margin: 0;
   outline: solid black;
 }
@@ -596,7 +596,6 @@ button:active {
 .searchBarDivSmall > .searchBy,
 .searchBarDiv > .searchBy {
   height: 15px;
-  font-weight: 500;
   min-width: max-content;
 }
 
@@ -608,7 +607,6 @@ button:active {
 .searchBarDivSmall > .searchBar,
 .searchBarDiv > .searchBar {
   height: 15px;
-  font-weight: 700;
   min-width: max-content;
   max-width: 100%;
   background-color: transparent !important;
@@ -659,7 +657,6 @@ a.searchBtn {
   border: solid black;
   border-left: none;
   outline: solid #7d7878 1px;
-  font-weight: bolder;
 }
 
 .weirdBtn,
@@ -669,9 +666,7 @@ a.searchBtn {
   margin: 20px 0;
   margin-left: auto;
   border: solid black;
-  font-weight: bolder;
   margin-left: 15%;
-  font-weight: bolder;
   height: 30px;
   outline: solid white 2px;
 }
@@ -683,7 +678,6 @@ a.searchBtn {
   background-color: rgb(2, 80, 30);
   border-radius: 0px;
   outline: none;
-  font-weight: bolder;
   border: solid black 3px;
 }
 #popUp {
@@ -722,7 +716,7 @@ a.searchBtn {
   margin: 10px auto;
   height: 30px;
   border-left: solid black;
-  font-weight: bolder;
+  font-weight: 900;
 }
 .results {
   min-width: 100%;
@@ -1003,6 +997,7 @@ input {
   max-width: 90px;
   width: 100%;
   font-weight: 100 !important;
+  font-size: 12px;
 }
 
 .div > .div2 {
@@ -1114,6 +1109,7 @@ select:hover {
   border: solid black;
   outline: solid white 1px;
   width: 100%;
+  font-size: 12px;
 }
 
 .featureTitle {
@@ -1141,7 +1137,7 @@ select:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(12, 34, 53);
+  background-color: rgb(2, 4, 5, 0.7);
   color: white;
   height: 15.4px;
   outline: black solid;

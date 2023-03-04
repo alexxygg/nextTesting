@@ -37,7 +37,7 @@ const GoodAddresses = ({ account, handleCopyClick }) => {
           {tloAddressList.map((address, index) => (
             <div key={index}>
               {" "}
-              <img src="/address.png" className="smallImg" />
+              <img src="/location2.png" className="smallImg" />
               <input
                 readOnly
                 onClick={handleClick}
@@ -50,7 +50,7 @@ const GoodAddresses = ({ account, handleCopyClick }) => {
       </div>{" "}
       <form onSubmit={handleAddAddress}>
         <div className="div">
-          <img src="/address.png" className="smallImg" />
+          <img src="/location2.png" className="smallImg" />
           <input
             placeholder="123 Evergreen St, Somewhere, USA"
             type="text"
