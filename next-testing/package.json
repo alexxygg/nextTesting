@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build:css": "purgecss --config purgecss.config.js --out ./out"
+    "lint": "next lint"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.5.4",
@@ -17,7 +16,7 @@
     "next-auth": "^4.20.0",
     "npm": "^9.4.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "uuid": "^9.0.0"
-  }
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {}
 }
