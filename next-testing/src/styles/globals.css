@@ -437,7 +437,7 @@ button:active {
   justify-content: space-around;
   align-items: center;
   outline: solid black;
-  color: black;
+  color: white;
   z-index: 6;
 }
 .accountFromResults {
