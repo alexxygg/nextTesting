@@ -16,7 +16,7 @@ function StatusComp({ account }) {
     // get the updated status value from the select element
     const newStatusCode = event.target.value;
     // call supabase to update the account status in the database
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("accounts")
       .update({
         STATUS: newStatusCode,

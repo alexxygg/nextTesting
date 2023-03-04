@@ -24,7 +24,6 @@ function Header2({ account, handleSaveClick }) {
   };
   return (
     <>
-      {" "}
       <SearchBar />
       <div className="header2 ">
         <Link className="a" href="/search">
@@ -50,7 +49,7 @@ function Header2({ account, handleSaveClick }) {
             </Link>
             <Link target="_blank" href="https://example.com/videos">
               Videos
-            </Link>{" "}
+            </Link>
           </div>
         </div>
         {Number(account.id) > 1 && (
@@ -66,27 +65,18 @@ function Header2({ account, handleSaveClick }) {
             <img src="/next.png" className="img3" />
           </Link>
         )}
-        {/* <a className="a" href={`/accounts/${account.id + 1}`}>
-        <img src="/skip.png" title="Skip to Next Account" />
-      </a> */}
         <Link className="a" href={`/accounts`}>
-          <img src="/worklistAllAccounts.png" className="img2" />{" "}
+          <img src="/worklistAllAccounts.png" className="img2" />
         </Link>
         <Link className="a" href={`/accountsList`}>
-          <img src="/changeWorklist.png" className="img" />{" "}
+          <img src="/changeWorklist.png" className="img" />
         </Link>
-        {/* <a className="a" href={`/accountsList`}>
-        <img src="/worklistAllAccounts.png" title="Pause Current Worklist" />{" "}
-      </a>
-      <a className="a" href={`/accountsList`}>
-        <img src="/worklistAllAccounts.png" title="Delete Current Worklist" />{" "}
-      </a>{" "} */}{" "}
         <Link className="a" href="/accounts/search" target="_blank">
           <img src="/search.png" alt="" className="img2" />
-        </Link>{" "}
+        </Link>
         <button className="saveChangesBtn" onClick={changesAlert}>
           Save Changes
-        </button>{" "}
+        </button>
       </div>
     </>
   );

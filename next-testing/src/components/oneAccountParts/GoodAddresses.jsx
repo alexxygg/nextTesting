@@ -12,7 +12,7 @@ const GoodAddresses = ({ account, handleCopyClick }) => {
       ...account,
       tloAddressList: [...tloAddressList, newAddress],
     };
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("accounts")
       .update(updatedAccount)
       .eq("id", account.id);

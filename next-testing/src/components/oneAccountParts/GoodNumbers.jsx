@@ -15,7 +15,7 @@ function GoodNumbers({ account, handleCopyClick }) {
       ...account,
       goodNumbers: [...goodNumbers, newNumber],
     };
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("accounts")
       .update(updatedAccount)
       .eq("id", account.id);
