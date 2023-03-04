@@ -30,7 +30,7 @@ function TLO({ account, handleCopyClick }) {
     <>
       <div className="title">TLO</div>
       <div className="section">
-        <div className="subTitle">Address</div>
+        <div className="subTitle">ADDRESS</div>
         {account.tloAddressList &&
           account.tloAddressList.map((each, index) => {
             return (
@@ -47,7 +47,7 @@ function TLO({ account, handleCopyClick }) {
               </div>
             );
           })}
-        <div className="subTitle goldColor">Employer</div>
+        <div className="subTitle goldColor">EMPLOYER</div>
         <div className="div">
           <div className="beforeInput sixth">Employer:</div>
           <input
@@ -76,7 +76,7 @@ function TLO({ account, handleCopyClick }) {
             defaultValue={account.TLO_POE_NUMBER}
           />
         </div>
-        <div className="subTitle">Rent</div>
+        <div className="subTitle">RENT</div>
         <div className="div">
           <div className="beforeInput thirty">Rent Amount:</div>
           <input
@@ -96,7 +96,7 @@ function TLO({ account, handleCopyClick }) {
             defaultValue={account.LANDLORD_PHONE_NUMBER}
           />
         </div>
-        <div className="subTitle">Contact</div>
+        <div className="subTitle">CONTACT</div>
         <div className="div">
           <div className="beforeInput div2 ">
             <img src="/newNumber.png" className="smallImg2" />

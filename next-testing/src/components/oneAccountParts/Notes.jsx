@@ -8,7 +8,7 @@ function Notes({ account }) {
   };
   return (
     <div className="notesDiv">
-      <div className="title">Notes:</div>
+      <div className="title">NOTES</div>
       <div className="notes">
         <p className="id otherBg goldColor">ID:</p>
         <p className="by otherBg goldColor">By:</p>

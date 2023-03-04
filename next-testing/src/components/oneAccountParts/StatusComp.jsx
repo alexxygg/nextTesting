@@ -33,9 +33,9 @@ function StatusComp({ account }) {
   return (
     <>
       <div className="div">
-        <div className="beforeInput sixth">Status:</div>
+        <div className="beforeInput sixthStatus">Status:</div>
         <select
-          className="maxContent"
+          className="maxContent select"
           onChange={updateAccountStatus}
           value={statusCode}
         >

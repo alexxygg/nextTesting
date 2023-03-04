@@ -49,7 +49,7 @@ function TestAccount({ account, handleCopyClick }) {
           />
         </div>
       </div>
-      <div className="title">Debt</div>
+      <div className="title">DEBT</div>
       <div className="section">
         <div className="div">
           <div className="beforeInput thirty">Principal:</div>
@@ -127,10 +127,10 @@ function TestAccount({ account, handleCopyClick }) {
           />
         </div>
       </div>
-      <div className="title">Client</div>
+      <div className="title">CLIENT</div>
       <div className="section">
         <StatusComp account={account} />
-
+        <div className="subTitle">DETAILS</div>
         <div className="div">
           <div className="beforeInput thirty">Client:</div>
           <input
@@ -303,9 +303,9 @@ function TestAccount({ account, handleCopyClick }) {
           />
         </div>
       </div>
-      <div className="title">Debt Information</div>
+      <div className="title">DEBT INFORMATION</div>
       <div className="section">
-        <div className="subTitle goldColor">Banking Information</div>
+        <div className="subTitle goldColor">BANKING INFORMATION</div>
         <div className="div">
           <div className="beforeInput thirty ">Bank Account Name:</div>
           <input
@@ -360,9 +360,9 @@ function TestAccount({ account, handleCopyClick }) {
             defaultValue={account.PRODUCT}
           />
         </div>
-        <div className="subTitle goldColor">Documents</div>
+        <div className="subTitle goldColor">DOCUMENTS</div>
         <div className="div">
-          <div className="beforeInput thirty">Debtor Doc. Notifications:</div>
+          <div className="beforeInput thirty">Debtor Notifications:</div>
           <input
             readOnly
             type="text"
@@ -379,7 +379,7 @@ function TestAccount({ account, handleCopyClick }) {
             defaultValue={account.PDF}
           />
         </div>
-        <div className="subTitle goldColor">DOB and SSN</div>
+        <div className="subTitle goldColor">DOB & SSN</div>
         <div className="div">
           <div className="beforeInput thirty">DOB:</div>
           <input

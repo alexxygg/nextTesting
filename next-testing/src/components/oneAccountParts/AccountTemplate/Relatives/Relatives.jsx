@@ -39,9 +39,9 @@ function Relatives({ account, handleCopyClick }) {
 
   return (
     <>
-      <div className="title">Relatives</div>
+      <div className="title">RELATIVES</div>
       <div className="section">
-        <div className="subTitle">Name and Address</div>
+        <div className="subTitle">NAME & ADDRESS</div>
         <div className="div">
           <div className="beforeInput twenty">Relative 1 (R1):</div>
           <input
@@ -132,7 +132,7 @@ function Relatives({ account, handleCopyClick }) {
             defaultValue={account.RELATIVE_5_ADDY}
           />
         </div>
-        <div className="subTitle">Contact</div>
+        <div className="subTitle">CONTACT</div>
         <div className="div">
           <div className="beforeInput sixth">
             R1 1 &nbsp;

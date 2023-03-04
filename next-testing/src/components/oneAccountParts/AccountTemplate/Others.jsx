@@ -8,9 +8,9 @@ function Others({ account, handleCopyClick }) {
   };
   return (
     <>
-      <div className="title">Other</div>
+      <div className="title">OTHER</div>
       <div className="section">
-        <div className="subTitle goldColor">Items</div>
+        <div className="subTitle goldColor">ITEMS</div>
         <div className="div">
           <div className="beforeInput sixth">Item A:</div>
           <input
@@ -38,7 +38,7 @@ function Others({ account, handleCopyClick }) {
             defaultValue={account.ITEM_C}
           />
         </div>
-        <div className="subTitle goldColor">Props</div>
+        <div className="subTitle goldColor">PROPS</div>
         <div className="div">
           <div className="beforeInput thirty ">Prop Owner Address:</div>
           <input
@@ -77,7 +77,7 @@ function Others({ account, handleCopyClick }) {
             defaultValue={account.PROP_OWNER_LENDER}
           />
         </div>
-        <div className="subTitle">Co-Signer</div>
+        <div className="subTitle">COSIGNER</div>
         <div className="div">
           <div className="beforeInput sixth">Co-Signer First:</div>
           <input
@@ -106,7 +106,7 @@ function Others({ account, handleCopyClick }) {
             defaultValue={account.CO_SIGNER_SSN}
           />
         </div>
-        <div className="subTitle">Legal</div>
+        <div className="subTitle">LEGAL</div>
         <div className="div">
           <div className="beforeInput sixth">Attorney:</div>
           <input

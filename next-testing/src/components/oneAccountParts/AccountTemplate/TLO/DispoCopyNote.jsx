@@ -27,7 +27,7 @@ function DispoCopyNote({ account, selectedDispositions, handleCopyClick }) {
           borderLeft: "solid black",
         }}
       >
-        Copy all numbers + codes.
+        Copy summary
       </button>
     </>
   );

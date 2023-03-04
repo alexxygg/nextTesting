@@ -35,7 +35,7 @@ function GoodNumbers({ account, handleCopyClick }) {
   // s
   return (
     <div className="addNumberDiv">
-      <div className="title ">Good Numbers:</div>
+      <div className="title ">CONFIRMED NUMBERS</div>
       <div className="allGoodNumbers">
         {goodNumbers.map((each, index) => (
           <div key={index} className="div">

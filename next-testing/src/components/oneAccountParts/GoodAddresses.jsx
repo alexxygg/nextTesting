@@ -31,7 +31,7 @@ const GoodAddresses = ({ account, handleCopyClick }) => {
 
   return (
     <div className="addAddressDiv">
-      <div className="title ">TLO Address List</div>
+      <div className="title ">TLO ADDRESS LIST</div>
       <div className="tloAddressList">
         <div className="allGoodAddresses">
           {tloAddressList.map((address, index) => (
