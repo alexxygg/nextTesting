@@ -81,9 +81,16 @@ function HomePage() {
               today and experience the difference in your account management!
             </h2>
           </div>
-          <a href="/accountsList" className="searchBtn borderLeft">
+          <a href="/accounts" className="searchBtn borderLeft">
             Try the DEMO!
           </a>
+          <div>
+            To showcase the Login security, all pages with account data require
+            user to be signed in!
+          </div>
+          <div>You can use these credentials:</div>
+          <li>username: a@test.com</li>
+          <li>password: test</li>
         </div>
       </div>
     </>

@@ -16,8 +16,8 @@ function HeaderOtherLinks() {
   // };
   return (
     <div className="otherSites ">
-      <a href="/about">Home/About</a>
-      <a href="/">All Accounts</a>
+      <a href="/">About FirePulse</a>
+      <a href="/accounts">All Accounts</a>
       <a href="/accounts/search">Search All</a>
       {/* {ifUser(globalUser)} */}
     </div>

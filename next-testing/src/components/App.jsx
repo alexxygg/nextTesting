@@ -1,5 +1,3 @@
-import "./App.css";
-
 import Accounts from "./Accounts";
 import AccountsList from "./AccountsList";
 import HomePage from "./HomePage";

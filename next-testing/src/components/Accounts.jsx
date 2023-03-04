@@ -8,7 +8,7 @@ import HeaderOtherLinks from "./HeaderOtherLinks";
 import { useRouter } from "next/router";
 import { supabase } from "../../lib/supabaseClient";
 
-function Accounts() {
+function Accounts({ username }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [account, setAccount] = useState(null);
   const router = useRouter();
@@ -49,6 +49,11 @@ function Accounts() {
       handleCopyClick();
     }
   };
+  const handleLogout = async () => {
+    // remove user from state and local storage
+    localStorage.removeItem("user");
+    await router.push("/");
+  };
 
   return (
     <>
@@ -56,24 +61,19 @@ function Accounts() {
         <>
           <div className="navbar">
             <HeaderOtherLinks />
-            <Header account={account} user={user} />
-            <Header2
+            <Header
               account={account}
-              user={user}
-              handleSaveClick={handleSaveClick}
-            >
+              username={username}
+              handleLogout={handleLogout}
+            />
+            <Header2 account={account} handleSaveClick={handleSaveClick}>
               {" "}
             </Header2>
           </div>
           <div id="padded">
-            <TestAccount
-              account={account}
-              user={user}
-              handleCopyClick={handleCopyClick}
-            />
+            <TestAccount account={account} handleCopyClick={handleCopyClick} />
             <AddThingsSection
               account={account}
-              user={user}
               handleCopyClick={handleCopyClick}
             />
             <Notes account={account} user={user} />

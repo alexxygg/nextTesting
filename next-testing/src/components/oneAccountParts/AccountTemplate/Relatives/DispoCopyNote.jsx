@@ -4,13 +4,10 @@ function DispoCopyNote({ account, selectedDispositions, handleCopyClick }) {
   const copyDispositionsNote = async () => {
     try {
       await navigator.clipboard.writeText(noteToCopy);
-      document.getElementById("popUp").style.backgroundColor = "gold";
-      document.getElementById("popUp").style.color = "black";
-      document.getElementById("popUp").style.fontWeight = "900";
+      document.getElementById("popUp").style.backgroundColor = "blue";
       document.getElementById("popUp").textContent = "Summary Copied!";
       setTimeout(() => {
         document.getElementById("popUp").style.backgroundColor = "";
-        document.getElementById("popUp").style.color = "white";
 
         document.getElementById("popUp").textContent = "Copied!";
       }, 2000);

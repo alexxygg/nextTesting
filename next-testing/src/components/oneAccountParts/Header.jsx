@@ -1,27 +1,25 @@
-function Header({ account, user, handleLogout }) {
+function Header({ account, username, handleLogout }) {
   return (
-    <>
-      <div className="header ">
-        <div className="logo">FirePulse©</div>
+    <div className="header ">
+      <div className="logo">FirePulse©</div>
+      <div>
         <div>
-          {/* <div>
           Name: <span className="goldColor">{account.name}</span>{" "}
         </div>
         <div>
           Status: <span className="goldColor">{account.STATUS}</span>{" "}
-        </div> */}
         </div>
       </div>
-      <div className="header2">
-        {" "}
-        <div>
-          User: &nbsp;<span className="blue">{user.username}</span>
+      <div>
+        <div className="userSigned ">
+          {" "}
+          <div>Logged in</div>
+          <button onClick={handleLogout} className="weirdBtn borderLeft">
+            Log out
+          </button>
         </div>
-        <button onClick={handleLogout} className="searchBtn borderLeft">
-          Logout
-        </button>{" "}
       </div>
-    </>
+    </div>
   );
 }
 

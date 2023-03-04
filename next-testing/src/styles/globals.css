@@ -97,7 +97,7 @@ a {
   line-height: 1.5;
   color-scheme: light dark;
   color: white;
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -122,7 +122,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
-  background: linear-gradient(to right, rgb(24, 32, 175), rgb(23, 23, 23));
+  background: linear-gradient(to right, #2c379b, #1f1673);
   background-size: 800% 800%;
   animation: background-shift 120s linear infinite;
 }
@@ -153,6 +153,7 @@ button {
   background-color: blue;
   color: ghostwhite;
   transition: all 0.1s ease-in-out;
+  font-family: monospace;
 }
 button:hover {
   transform: translateY(-0.5px);
@@ -186,7 +187,7 @@ button:active {
 }
 .header {
   justify-content: space-between;
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   display: flex;
   outline: 3px solid black;
   width: 100%;
@@ -201,7 +202,7 @@ button:active {
   text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
     1px 1px 0 gold;
   color: black;
-  font-family: fantasy;
+  font-family: monospace;
   border: 5px solid#0c2235;
   outline: black solid;
   border-image-slice: 1;
@@ -228,7 +229,7 @@ button:active {
 }
 .header2 {
   justify-content: space-evenly;
-  background-color: #0c2235;
+  background-color: rgba(2, 4, 5, 0.95);
   border-radius: 0px;
   align-items: center;
   height: 30px;
@@ -257,6 +258,92 @@ button:active {
 .tabs > div:nth-of-type(4) {
   border-right: none;
 }
+.loginPage {
+  background-color: rgba(0, 0, 0, 0.622);
+  height: auto;
+  display: flex;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  border: solid white;
+  outline: solid #0c2235;
+  border-top: none;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0rem 0rem 2rem 2rem;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.loginPage > div {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.loginPage > div:nth-of-type(2) {
+  margin: 0;
+}
+.loginPage > div > div {
+  min-width: 100%;
+}
+.loginPage > div > div:nth-of-type(2) {
+  max-width: 30%;
+  min-width: 30%;
+  font-size: xx-large;
+}
+.loginPage > button {
+  min-width: auto !important;
+  width: auto !important;
+  max-width: auto !important;
+  margin: 5px auto !important;
+  margin-bottom: 0%;
+  height: 25px;
+  padding: 0px 15px;
+  border-radius: 0px;
+}
+.loginPage > input {
+  min-width: 30% !important;
+  width: 30% !important;
+  max-width: 30% !important;
+  margin: 10px 35% !important;
+  outline: solid rgba(255, 255, 255, 0.43) 2px;
+  text-align: center;
+  border-radius: 2rem;
+}
+.userSigned {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0px;
+  height: auto;
+  margin: 0px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-left: solid black !important;
+  width: 100%;
+}
+.userSigned > div {
+  margin: 0 10px;
+  min-width: 50% !important;
+  text-align: start;
+}
+.userSigned > button {
+  margin: 0 10px;
+  width: 40%;
+  max-width: 200px;
+  height: auto;
+  box-shadow: none;
+  min-width: max-content;
+  background-color: red;
+}
+/* .loginPage > input {
+  margin: 2% 25%;
+} */
+
 @media (min-width: 1000px) {
   #padded {
     padding: 0vw 5vw;
@@ -265,6 +352,13 @@ button:active {
   #paddedList,
   #paddedList2 {
     padding: 0vw 5vw;
+  }
+  .loginPage > input {
+    min-width: 20% !important;
+    width: 20% !important;
+    max-width: 20% !important;
+    margin-left: 40% !important;
+    margin-right: 40% !important;
   }
 }
 @media (min-width: 1500px) {
@@ -285,13 +379,12 @@ button:active {
   height: 20px;
   margin: 7px 0px;
   margin-top: 15px;
-  border-radius: 0px 10px 0px 10px;
+  border-radius: 10px 10px 0px 0px;
   z-index: 3;
   color: gold;
   background-color: black;
   border: solid #0c2235;
   border-bottom: none;
-  border-left: none;
   text-align: center;
 }
 .title:nth-of-type(1) {
@@ -302,10 +395,15 @@ button:active {
   margin: auto;
 }
 .subTitle {
-  width: 100%;
-  display: flex;
   font-size: smaller;
   color: gold;
+  background-color: black;
+  max-width: 10%;
+  min-width: max-content;
+  margin-right: auto;
+  padding: 0px 5px;
+  margin: 5px 0px;
+  margin-right: auto;
 }
 .section,
 .notes,
@@ -448,7 +546,7 @@ button:active {
   color: red;
 }
 .otherSites {
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -484,7 +582,7 @@ button:active {
 }
 .searchBarDiv,
 .searchBarDivSmall {
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.55);
   display: flex;
   flex-wrap: wrap;
   outline: black solid;
@@ -500,13 +598,12 @@ button:active {
   height: 15px;
   font-weight: 500;
   min-width: max-content;
-  background-color: #0c2235;
 }
 
 .searchBy > select {
   min-width: max-content;
   outline: black solid;
-  background-color: #0c2235;
+  background-color: transparent !important;
 }
 .searchBarDivSmall > .searchBar,
 .searchBarDiv > .searchBar {
@@ -514,11 +611,10 @@ button:active {
   font-weight: 700;
   min-width: max-content;
   max-width: 100%;
-  background-color: #0c2235;
+  background-color: transparent !important;
 }
 .searchBarDivSmall > .searchBy > select:hover {
   outline: solid #ffffff 2px;
-  background-color: #3d4e5d;
   border: solid black;
   z-index: 3;
   height: max-content;
@@ -529,9 +625,6 @@ button:active {
   outline: solid #ffffff 2px;
 }
 
-.searchBar:hover {
-  background-color: #3d4e5d;
-}
 .searchBy {
   width: 30% !important;
   display: flex;
@@ -543,7 +636,6 @@ button:active {
 }
 
 .searchBar {
-  background-color: rgb(20, 23, 27);
   color: white;
   width: 40% !important;
   height: 20px;
@@ -588,12 +680,11 @@ a.searchBtn {
   height: min-content;
   margin: 0%;
   right: 0;
-  background-color: red;
+  background-color: rgb(2, 80, 30);
   border-radius: 0px;
   outline: none;
   font-weight: bolder;
   border: solid black 3px;
-  border-radius: 0rem 2rem 2rem 0rem;
 }
 #popUp {
   visibility: hidden;
@@ -610,7 +701,7 @@ a.searchBtn {
   border: solid black 5px;
   border-bottom: none;
   font-size: medium;
-  font-weight: 700;
+  font-weight: 900 !important;
 }
 #popUp.show {
   visibility: visible;
@@ -680,7 +771,7 @@ a.searchBtn {
   margin-top: auto;
   height: 20px;
   width: 100%;
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   outline: solid black;
   position: fixed;
   z-index: 6;
@@ -702,13 +793,13 @@ a.searchBtn {
 }
 
 .searchBarDivAgainSmall > .searchBarDivSmall {
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   outline: none;
   display: flex;
   width: 100%;
 }
 .searchBarDivAgain > .searchBarDiv {
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   outline: none;
   display: flex;
   padding: 2% 1%;
@@ -761,16 +852,6 @@ a.searchBtn {
   max-width: 100%;
 }
 
-.allThingsSection {
-  display: flex;
-  border: solid black;
-  margin: 20px 0px;
-  margin-bottom: 30px;
-  background-color: transparent;
-}
-.allThingsSection > * {
-  width: 50%;
-}
 .allGoodAddresses > div {
   display: flex;
   justify-content: space-around;
@@ -860,7 +941,7 @@ a.searchBtn {
 }
 select {
   width: 30%;
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   border: none;
   height: 16px;
   text-align: right;
@@ -872,11 +953,8 @@ select::-webkit-scrollbar,
   width: 15px;
 }
 
-select::-webkit-scrollbar-track {
-  background-color: rgb(19, 30, 40);
-}
 ::-webkit-scrollbar-track {
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
 }
 
 select::-webkit-scrollbar-thumb,
@@ -893,23 +971,38 @@ select::-webkit-scrollbar-thumb,
   align-items: center;
   border: solid black;
   border-radius: 0px 0px 10px 10px;
-  border-radius: 10px 0px 10px 0px;
+  border: solid gold 1px;
+  outline: solid black;
   background-color: transparent;
   /* background-color: rgba(33, 53, 71, 0.7); */
   width: 100%;
   padding: 10px 20px;
-  margin-bottom: 7px;
+  padding-bottom: 15px;
+  margin: 7px 0px;
+}
+.allThingsSection {
+  display: flex;
+  border: solid gold 1px;
+  border-radius: 0px 0px 10px 10px;
+
+  outline: solid black;
+  margin: 20px 0px;
+  margin-bottom: 30px;
+  background-color: transparent;
+}
+.allThingsSection > * {
+  width: 50%;
 }
 input {
   overflow: hidden;
   text-align: end;
   height: 10px;
   color: ghostwhite;
-  background-color: rgb(20, 23, 27);
-
+  background-color: rgba(2, 4, 5, 0.95);
   outline: solid black;
   max-width: 90px;
   width: 100%;
+  font-weight: 100 !important;
 }
 
 .div > .div2 {
@@ -986,9 +1079,8 @@ a.searchBtn:hover {
 
 input:hover,
 select:hover {
-  outline: solid white 1px;
+  outline: solid rgb(255, 0, 0);
   z-index: 2;
-  background-color: black;
 }
 
 .video {
@@ -1018,7 +1110,7 @@ select:hover {
 }
 .dispositionsNote {
   user-select: none;
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(2, 4, 5, 0.95);
   border: solid black;
   outline: solid white 1px;
   width: 100%;
@@ -1080,63 +1172,8 @@ select:hover {
   z-index: 6;
   width: 100%;
   transition: all 0.5s ease-in;
-  background-color: rgb(20, 23, 27);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .blue {
   color: blue;
 }
-.loginPage {
-  background-color: rgba(0, 0, 0, 0.622);
-  height: auto;
-  display: flex;
-  padding-bottom: 10px;
-  flex-wrap: wrap;
-  border: solid white;
-  outline: solid #0c2235;
-  border-top: none;
-  background-color: rgb(0, 0, 0);
-  border-radius: 0rem 0rem 2rem 2rem;
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-.loginPage > div {
-  margin-top: 100px;
-  margin-bottom: 60px;
-  width: 100%;
-  height: 120px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.loginPage > div:nth-of-type(2) {
-  margin: 0;
-}
-.loginPage > div > div {
-  min-width: 100%;
-}
-.loginPage > div > div:nth-of-type(2) {
-  max-width: 30%;
-  min-width: 30%;
-  font-size: xx-large;
-}
-.loginPage > button {
-  min-width: auto !important;
-  width: auto !important;
-  max-width: auto !important;
-  margin: 2% auto !important;
-  margin-bottom: 0%;
-}
-.loginPage > input {
-  min-width: 30% !important;
-  width: 30% !important;
-  max-width: 30% !important;
-  margin: 2% 35% !important;
-  outline: solid rgba(255, 255, 255, 0.43) 2px;
-  text-align: center;
-  border-radius: 2rem;
-}
-
-/* .loginPage > input {
-  margin: 2% 25%;
-} */

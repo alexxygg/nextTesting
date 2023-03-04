@@ -30,8 +30,9 @@ export default function SignUp() {
     <div id="paddedList2">
       <form onSubmit={handleSignUp} className="loginPage">
         <div>
-          <div> Welcome to </div>
+          <div></div>
           <div className="logo outlineWhite boxShadowed">FirePulse©</div>
+          <div>Welcome!</div>
         </div>
         <input
           type="email"
@@ -43,7 +44,7 @@ export default function SignUp() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button type="submit" className="searchBtn borderLeft">
+        <button type="submit" className="weirdBtn borderLeft">
           Sign up
         </button>
         <div>
