@@ -3,10 +3,10 @@ import TestAccount from "./oneAccountParts/TestAccount";
 import Header from "./oneAccountParts/Header";
 import Header2 from "./oneAccountParts/Header2";
 import Notes from "./oneAccountParts/Notes";
-import AddThingsSection from "./oneAccountParts/AddThingsSection";
+import AddSection from "./oneAccountParts/AddSection";
 import HeaderOtherLinks from "./HeaderOtherLinks";
 import { useRouter } from "next/router";
-import { supabase } from "../../lib/supabaseClient";
+import { supabase } from "/lib/supabaseClient";
 
 function Accounts({ username }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -72,10 +72,7 @@ function Accounts({ username }) {
           </div>
           <div className="padded">
             <TestAccount account={account} handleCopyClick={handleCopyClick} />
-            <AddThingsSection
-              account={account}
-              handleCopyClick={handleCopyClick}
-            />
+            <AddSection account={account} handleCopyClick={handleCopyClick} />
             <Notes account={account} user={user} />
           </div>
           <div id="popUp" className={showConfirmation ? "show" : ""}>

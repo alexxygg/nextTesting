@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
-import allAccounts from "/allAccounts";
-
-// import { Link } from "react-router-dom";
-// import { globalUser } from "./Login";
 import HeaderOtherLinks from "./HeaderOtherLinks";
-
-import { supabase } from "../../lib/supabaseClient";
+import { supabase } from "/lib/supabaseClient";
 
 function AccountsList() {
   const [accounts, setAccounts] = useState([]);
@@ -21,9 +16,6 @@ function AccountsList() {
     };
     fetchAccounts();
   }, []);
-  // const ifUser = (globalUser) => {
-  //   return globalUser ? <div>{globalUser.USERNAME}</div> : null;
-  // };
 
   return (
     <>

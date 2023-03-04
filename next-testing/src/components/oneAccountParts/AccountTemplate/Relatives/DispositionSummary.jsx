@@ -1,6 +1,6 @@
 import React from "react";
 
-function DispoSummary({ account, selectedDispositions }) {
+function DispositionSummary({ account, selectedDispositions }) {
   return (
     <div className="dispositionsNote " cols="100" rows="7" readOnly>
       {account.RELATIVE_1_PH1}
@@ -68,4 +68,4 @@ function DispoSummary({ account, selectedDispositions }) {
   );
 }
 
-export default DispoSummary;
+export default DispositionSummary;

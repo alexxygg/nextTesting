@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import CopyDisposition from "./CopyDisposition";
 import DispositionSummary from "./DispositionSummary";
-import allDispositions from "../../../../../allDispositions";
+import allDispositions from "allDispositions";
 function TLO({ account, handleCopyClick }) {
   const [selectedDispositions, setSelectedDispositions] = useState({
     TLO_1_DISPOSITION: allDispositions[0],

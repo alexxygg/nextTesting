@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { supabase } from "../../lib/supabaseClient"; // Import Supabase client
+import { supabase } from "/lib/supabaseClient"; // Import Supabase client
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");

@@ -126,9 +126,9 @@ button:active {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  z-index: 6;
+  z-index: 3;
   height: max-content;
-  border-bottom: solid 3px red;
+  border-bottom: solid 2px gold;
   outline: solid black;
 }
 .header2 > div {
@@ -267,7 +267,7 @@ button:active {
   margin: 7px 0;
   margin-top: 15px;
   border-radius: 10px 10px 0 0;
-  z-index: 3;
+  z-index: 2;
   color: gold;
   background-color: black;
   border: solid #0c2235;
@@ -442,7 +442,7 @@ button:active {
   align-items: center;
   outline: solid black;
   color: white;
-  z-index: 6;
+  z-index: 3;
 }
 .accountFromResults {
   display: flex;
@@ -574,7 +574,6 @@ a.searchBtn {
   text-align: center;
   left: 50%;
   bottom: 27px;
-  z-index: 1;
   position: fixed;
   border: solid black 5px;
   border-bottom: none;
@@ -584,7 +583,7 @@ a.searchBtn {
 #popUp.show {
   visibility: visible;
   animation: slideIn 0.5s forwards, slideOut 0.5s 1.5s forwards;
-  z-index: 5;
+  z-index: 3;
 }
 .borderLeft {
   border-left: solid black 2px;
@@ -652,8 +651,8 @@ a.searchBtn {
   background-color: rgba(2, 4, 5, 0.95);
   outline: solid black;
   position: fixed;
-  z-index: 6;
-  border-top: solid red 4px;
+  z-index: 3;
+  border-top: solid blue 4px;
 }
 .aboutPage {
   min-height: 94vh;
@@ -697,7 +696,7 @@ a.searchBtn {
 .helpDropdown {
   display: none;
   position: absolute;
-  z-index: 5;
+  z-index: 4;
   padding-top: 6px;
   top: 100%;
   left: 50%;
@@ -1063,7 +1062,7 @@ select:hover,
 
 .navbar {
   position: fixed;
-  z-index: 6;
+  z-index: 3;
   width: 100%;
   transition: all 0.5s ease-in;
   background-color: rgb(255, 255, 255);

@@ -1,6 +1,6 @@
 import { useState, React } from "react";
-import DispoCopyNote from "./DispoCopyNote";
-import DispoSummary from "./DispoSummary";
+import CopyDisposition from "./CopyDisposition";
+import DispositionSummary from "./DispositionSummary";
 
 import allDispositions from "../../../../../allDispositions";
 
@@ -511,12 +511,12 @@ function Relatives({ account, handleCopyClick }) {
             ))}
           </select>
         </div>
-        <DispoCopyNote
+        <CopyDisposition
           selectedDispositions={selectedDispositions}
           account={account}
           handleCopyClick={handleCopyClick}
         />
-        <DispoSummary
+        <DispositionSummary
           selectedDispositions={selectedDispositions}
           account={account}
         />

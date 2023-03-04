@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import HeaderOtherLinks from "./HeaderOtherLinks";
 
-import { supabase } from "../../lib/supabaseClient"; // Import Supabase client
+import { supabase } from "lib/supabaseClient";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");

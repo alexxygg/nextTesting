@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import allStatusCodes from "../../../allStatusCodes";
+import allStatusCodes from "allStatusCodes";
 import { supabase } from "lib/supabaseClient";
 function StatusComp({ account }) {
   const [statusCode, setStatusCode] = useState(account.STATUS);
@@ -39,15 +39,13 @@ function StatusComp({ account }) {
           onChange={updateAccountStatus}
           value={statusCode}
         >
-          {allStatusCodes.map((option) => (
-            <option key={option} value={option}>
+          {allStatusCodes.map((option, index) => (
+            <option key={index} value={option}>
               {option}
             </option>
           ))}
         </select>
       </div>
-      {/* object.STATUS being updated on change */}
-      {/* <div>{object.STATUS}</div> */}
     </>
   );
 }

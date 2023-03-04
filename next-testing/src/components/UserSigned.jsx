@@ -1,4 +1,4 @@
-function UserSigned({ handleLogout, username }) {
+function UserSigned({ handleLogout }) {
   return (
     <div className="userSigned title">
       {" "}

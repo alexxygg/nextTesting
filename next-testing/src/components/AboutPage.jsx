@@ -5,7 +5,6 @@ function AboutPage() {
   return (
     <>
       <HeaderOtherLinks />
-
       <div className="paddedList2">
         <div className="aboutPage">
           <div className="header">
