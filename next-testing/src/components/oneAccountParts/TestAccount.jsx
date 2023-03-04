@@ -284,7 +284,7 @@ function TestAccount({ account, handleCopyClick }) {
           />
         </div>
         <div className="div">
-          <div className="beforeInput thirty">Delinq #1:</div>
+          <div className="beforeInput thirty">Delinquency #1:</div>
           <input
             readOnly
             type="text"
@@ -305,7 +305,7 @@ function TestAccount({ account, handleCopyClick }) {
       </div>
       <div className="title">DEBT INFORMATION</div>
       <div className="section">
-        <div className="subTitle goldColor">BANKING INFORMATION</div>
+        <div className="subTitle ">BANKING INFORMATION</div>
         <div className="div">
           <div className="beforeInput thirty ">Bank Account Name:</div>
           <input
@@ -360,7 +360,7 @@ function TestAccount({ account, handleCopyClick }) {
             defaultValue={account.PRODUCT}
           />
         </div>
-        <div className="subTitle goldColor">DOCUMENTS</div>
+        <div className="subTitle ">DOCUMENTS</div>
         <div className="div">
           <div className="beforeInput thirty">Debtor Notifications:</div>
           <input
@@ -379,7 +379,7 @@ function TestAccount({ account, handleCopyClick }) {
             defaultValue={account.PDF}
           />
         </div>
-        <div className="subTitle goldColor">DOB & SSN</div>
+        <div className="subTitle ">DOB & SSN</div>
         <div className="div">
           <div className="beforeInput thirty">DOB:</div>
           <input

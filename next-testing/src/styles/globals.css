@@ -1,6 +1,5 @@
 body {
   line-height: 1.5;
-  color-scheme: light dark;
   color: white;
   text-rendering: optimizeLegibility;
   text-align: center;
@@ -184,9 +183,8 @@ button:active {
   font-size: xx-large;
 }
 .loginPage > button {
-  min-width: auto;
+  min-width: max-content;
   width: auto;
-  max-width: auto;
   margin: 5px auto;
   margin-bottom: 0;
   height: 25px;
@@ -198,6 +196,7 @@ button:active {
   width: 30%;
   max-width: 30%;
   margin: 10px 35%;
+  outline: solid rgb(255, 255, 255) 2px;
   outline: solid rgba(255, 255, 255, 0.43) 2px;
   text-align: center;
   border-radius: 2rem;
@@ -210,8 +209,6 @@ button:active {
   height: auto;
   margin: 0;
   border: none;
-  border-radius: 0 !important;
-  outline: none;
   box-shadow: none;
   max-width: 99.4%;
 }
@@ -284,12 +281,13 @@ button:active {
 }
 .subTitle {
   font-size: smaller;
+  background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.8);
   min-width: max-content;
   width: 100%;
   padding: 0 5px;
   outline: solid black;
-  color: white !important;
+  color: white;
   height: max-content;
   font-weight: 900;
   text-align: center;
@@ -305,7 +303,7 @@ button:active {
 .otherSites,
 .title,
 .allThingsSection,
-.importantCheckbox,
+.importantCheckboxDiv,
 .dispositionsNote,
 .accountsPage,
 .weirdBtn {
@@ -371,20 +369,34 @@ button:active {
   justify-content: space-around;
   margin-bottom: 20px;
 }
-.importantAndBtn {
+.importantBtn {
   width: 20%;
   display: flex;
   flex-wrap: wrap;
+  font-weight: 900;
 }
-.importantCheckbox {
+.importantCheckboxDiv {
+  min-width: max-content;
   width: 100%;
   margin-top: auto;
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   background-color: red;
   border: solid black;
   outline: solid white;
   border-radius: 10px;
+  accent-color: blue;
+}
+.importantCheckbox {
+  width: 10%;
+  margin: auto 10%;
+  outline: none;
+}
+.importantWord {
+  width: 40%;
+  margin: auto 15%;
+  outline: none;
 }
 
 .newNoteField {
@@ -471,6 +483,7 @@ button:active {
 }
 .searchBarDiv,
 .searchBarDivSmall {
+  background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.55);
   display: flex;
   outline: black solid;
@@ -488,6 +501,7 @@ button:active {
   outline: black solid;
   background-color: transparent;
   height: 16px;
+  color: white;
 }
 .searchBarDivSmall > .searchBar,
 .searchBarDiv > .searchBar {
@@ -783,12 +797,15 @@ a.searchBtn {
   margin: 4px auto 10px auto;
   width: calc(33% / 2);
   margin-left: calc(33% / 2);
+  background-color: rgb(33, 53, 71);
   background-color: rgba(33, 53, 71, 0.1);
 }
 .dispositionSmall {
   display: flex;
-  width: 19%;
+  width: 10%;
+  margin-left: 10%;
   margin-top: 3px;
+  background-color: rgb(33, 53, 71);
   background-color: rgba(33, 53, 71, 0.1);
 }
 .disposition > select,
@@ -843,7 +860,6 @@ select::-webkit-scrollbar-thumb,
   border: solid gold 1px;
   outline: solid black;
   background-color: transparent;
-  /* background-color: rgba(33, 53, 71, 0.7); */
   width: 100%;
   padding: 10px 20px;
   padding-bottom: 15px;
@@ -859,8 +875,9 @@ select::-webkit-scrollbar-thumb,
   margin-bottom: 30px;
   background-color: transparent;
 }
-.allThingsSection > * {
-  width: 50%;
+.allThingsSection > .addAddressDiv,
+.allThingsSection > .addNumberDiv {
+  width: 100%;
 }
 input {
   overflow: hidden;
@@ -889,7 +906,7 @@ input {
   height: 17.6px;
   border-width: 1px;
   border-style: inset;
-  border-color: (rgb(13, 4, 4));
+  border-color: rgb(13, 4, 4);
 }
 .sixthStatus {
   width: 28%;
@@ -900,8 +917,9 @@ input {
   background-color: blue;
   padding-right: 10px;
   font-weight: 700;
-  width: 70% !important;
+  width: 70%;
   margin-left: auto;
+  color: white;
 }
 .div > .div2 {
   display: flex;
@@ -958,17 +976,13 @@ input {
   margin: 0;
 }
 
-input[type="checkbox"],
-input[type="checkbox"]:hover {
-  outline: none;
-}
 .importantInput {
   outline: white solid 1px;
 }
 
 button:hover,
 textarea:hover,
-.importantCheckbox:hover,
+.importantCheckboxDiv:hover,
 a.searchBtn:hover {
   outline: solid white 2px;
   z-index: 2;
@@ -984,7 +998,10 @@ select:hover,
 }
 select:hover,
 .select:hover {
-  background-color: rgba(2, 4, 5, 0.8);
+  outline: solid white 3px;
+
+  background-color: rgb(2, 80, 30);
+  accent-color: blue;
 }
 .video {
   width: 100%;

@@ -43,16 +43,16 @@ function NewNote({ account, updateNotes }) {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <div className="importantAndBtn">
+      <div className="importantBtn">
         {" "}
-        <label className="importantCheckbox">
+        <label className="importantCheckboxDiv">
           <input
-            className="importantInput"
+            className="importantCheckbox"
             type="checkbox"
             checked={isImportant}
             onChange={(event) => setIsImportant(event.target.checked)}
           />
-          Important
+          <div className="importantWord">Important</div>
         </label>
         <button className="newNoteBtn" type="submit">
           Add +
