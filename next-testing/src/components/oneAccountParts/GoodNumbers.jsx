@@ -32,7 +32,7 @@ function GoodNumbers({ account, handleCopyClick }) {
     navigator.clipboard.writeText(e.currentTarget.value);
     handleCopyClick();
   };
-
+  // s
   return (
     <div className="addNumberDiv">
       <div className="title ">Good Numbers:</div>
