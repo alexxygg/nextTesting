@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import allAccounts from "../../allAccounts";
-import { Link } from "react-router-dom";
 import HeaderOtherLinks from "./HeaderOtherLinks";
 
 import { supabase } from "../../lib/supabaseClient"; // Import Supabase client
