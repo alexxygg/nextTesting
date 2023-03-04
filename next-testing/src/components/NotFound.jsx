@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderOtherLinks from "./HeaderOtherLinks";
-// import { Link } from "react-router-dom";
+import Link from "next/link";
 
 function NotFound() {
   const handleClick = (event) => {
@@ -12,7 +12,7 @@ function NotFound() {
       <HeaderOtherLinks />{" "}
       <div className="paddedList2">
         <div className="header ">
-          <div className="logo middle">DEBTDYNAMIC©</div>
+          <div className="logo middle">FirePulse©</div>
         </div>{" "}
         <div className="title goldColor">ERROR</div>
         <div className="notFound">
@@ -20,9 +20,9 @@ function NotFound() {
           <div className="notFoundB">
             The resource you were looking for doesn't exist.
           </div>
-          <a href="#" onClick={handleClick}>
+          <Link href="#" onClick={handleClick}>
             Back
-          </a>{" "}
+          </Link>
         </div>
       </div>
     </>

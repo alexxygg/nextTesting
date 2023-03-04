@@ -1,6 +1,5 @@
 import Accounts from "@/components/Accounts";
 import Footer from "@/components/Footer";
-import Login from "@/components/Login";
 
 import { supabase } from "lib/supabaseClient";
 

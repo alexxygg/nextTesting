@@ -1,6 +1,8 @@
 import React from "react";
 import allAccounts from "../../../allAccounts";
 import SearchBar from "../SearchBar";
+import Link from "next/link";
+
 function Header2({ account, handleSaveClick }) {
   const changesAlert = async () => {
     const popUp = document.getElementById("popUp");
@@ -25,63 +27,63 @@ function Header2({ account, handleSaveClick }) {
       {" "}
       <SearchBar />
       <div className="header2 ">
-        <a className="a" href="/search">
+        <Link className="a" href="/search">
           <img src="/homeIcon.png" alt="" className="img2" />
-        </a>
+        </Link>
         <div className="helpContainer">
           Help
           <div className="helpDropdown">
-            <a target="_blank" href="https://example.com/videos">
+            <Link target="_blank" href="https://example.com/videos">
               Videos
-            </a>
-            <a target="_blank" href="https://example.com/manuals">
+            </Link>
+            <Link target="_blank" href="https://example.com/manuals">
               Manuals
-            </a>
-            <a target="_blank" href="https://example.com/manuals">
+            </Link>
+            <Link target="_blank" href="https://example.com/manuals">
               Manuals
-            </a>
-            <a target="_blank" href="https://example.com/videos">
+            </Link>
+            <Link target="_blank" href="https://example.com/videos">
               Videos
-            </a>
-            <a target="_blank" href="https://example.com/manuals">
+            </Link>
+            <Link target="_blank" href="https://example.com/manuals">
               Manuals
-            </a>
-            <a target="_blank" href="https://example.com/videos">
+            </Link>
+            <Link target="_blank" href="https://example.com/videos">
               Videos
-            </a>{" "}
+            </Link>{" "}
           </div>
         </div>
         {Number(account.id) > 1 && (
-          <a className="a" href={`/accounts/${Number(account.id) - 1}`}>
+          <Link className="a" href={`/accounts/${Number(account.id) - 1}`}>
             <img src="/previous.png" className="img3" />
-          </a>
+          </Link>
         )}
         <div>
           Account {account.id} of {allAccounts.length}
         </div>
         {Number(account.id) < allAccounts.length && (
-          <a className="a" href={`/accounts/${Number(account.id) + 1}`}>
+          <Link className="a" href={`/accounts/${Number(account.id) + 1}`}>
             <img src="/next.png" className="img3" />
-          </a>
+          </Link>
         )}
         {/* <a className="a" href={`/accounts/${account.id + 1}`}>
         <img src="/skip.png" title="Skip to Next Account" />
       </a> */}
-        <a className="a" href={`/accounts`}>
+        <Link className="a" href={`/accounts`}>
           <img src="/worklistAllAccounts.png" className="img2" />{" "}
-        </a>
-        <a className="a" href={`/accountsList`}>
+        </Link>
+        <Link className="a" href={`/accountsList`}>
           <img src="/changeWorklist.png" className="img" />{" "}
-        </a>
+        </Link>
         {/* <a className="a" href={`/accountsList`}>
         <img src="/worklistAllAccounts.png" title="Pause Current Worklist" />{" "}
       </a>
       <a className="a" href={`/accountsList`}>
         <img src="/worklistAllAccounts.png" title="Delete Current Worklist" />{" "}
       </a>{" "} */}{" "}
-        <a className="a" href="/accounts/search" target="_blank">
+        <Link className="a" href="/accounts/search" target="_blank">
           <img src="/search.png" alt="" className="img2" />
-        </a>{" "}
+        </Link>{" "}
         <button className="saveChangesBtn" onClick={changesAlert}>
           Save Changes
         </button>{" "}

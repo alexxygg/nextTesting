@@ -1,19 +1,8 @@
-import { React, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
+import { React } from "react";
 import HeaderOtherLinks from "./HeaderOtherLinks";
+import Link from "next/link";
 
 function HomePage() {
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   document.body.style.backgroundColor = "Grey";
-
-  //   return () => {
-  //     // reset the background color when leaving the route
-  //     document.body.style.backgroundColor = null;
-  //   };
-  // }, [location]);
-
   return (
     <>
       <HeaderOtherLinks />
@@ -81,9 +70,9 @@ function HomePage() {
               today and experience the difference in your account management!
             </h2>
           </div>
-          <a href="/accounts" className="searchBtn borderLeft">
+          <Link href="/accounts" className="searchBtn borderLeft">
             Try the DEMO!
-          </a>
+          </Link>
           <div>
             To showcase the Login security, all pages with account data require
             user to be signed in!
