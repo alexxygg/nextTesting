@@ -8,7 +8,7 @@ function Login({
   setPassword,
 }) {
   return (
-    <div id="paddedList2">
+    <div className="paddedList2">
       <form onSubmit={loginFunction} className="loginPage">
         <div>
           <div></div>

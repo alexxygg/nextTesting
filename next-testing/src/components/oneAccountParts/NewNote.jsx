@@ -14,7 +14,7 @@ function NewNote({ account, updateNotes }) {
       timestamp: new Date().toLocaleString(),
       isImportant: isImportant,
     };
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("accounts")
       .update({
         notes: [...allNotes, newNote],
@@ -43,7 +43,7 @@ function NewNote({ account, updateNotes }) {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <div className="importnatAndBtn">
+      <div className="importantAndBtn">
         {" "}
         <label className="importantCheckbox">
           <input

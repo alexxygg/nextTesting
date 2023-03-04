@@ -56,7 +56,7 @@ const SearchPage = () => {
     <>
       {" "}
       <HeaderOtherLinks />{" "}
-      <div id="paddedList">
+      <div className="paddedList">
         <div className="header">
           <div className="logo middle">FirePulse©</div>
         </div>{" "}
@@ -122,7 +122,7 @@ const SearchPage = () => {
             ) : showNoMatches ? (
               <div className="results">
                 {" "}
-                <div id="paddedList"> No matches found.</div>
+                <div className="paddedList"> No matches found.</div>
                 <button onClick={clearSearch} className="clearSearch">
                   Clear Search
                 </button>

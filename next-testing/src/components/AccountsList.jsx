@@ -28,7 +28,7 @@ function AccountsList() {
   return (
     <>
       <HeaderOtherLinks />{" "}
-      <div id="paddedList2">
+      <div className="paddedList2">
         <div className="header">
           <div className="logo middle">FirePulse©</div>
         </div>{" "}

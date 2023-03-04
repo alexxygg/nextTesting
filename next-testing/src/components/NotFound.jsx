@@ -10,7 +10,7 @@ function NotFound() {
   return (
     <>
       <HeaderOtherLinks />{" "}
-      <div id="paddedList2">
+      <div className="paddedList2">
         <div className="header ">
           <div className="logo middle">DEBTDYNAMIC©</div>
         </div>{" "}

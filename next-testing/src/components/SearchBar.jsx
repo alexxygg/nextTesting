@@ -85,7 +85,7 @@ const SearchBar = () => {
         {searchResults ? (
           searchResults.length > 0 ? (
             <div className="results">
-              <div id="paddedList">
+              <div className="paddedList">
                 <div className="accountFromResults otherBg goldColor">
                   <div>id</div>
                   <div>Account #</div>
@@ -116,7 +116,7 @@ const SearchBar = () => {
           ) : showNoMatches ? (
             <div className="results">
               {" "}
-              <div id="paddedList"> No matches found.</div>
+              <div className="paddedList"> No matches found.</div>
               <button onClick={clearSearch} className="clearSearch">
                 Clear Search
               </button>

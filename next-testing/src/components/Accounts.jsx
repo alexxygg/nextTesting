@@ -70,7 +70,7 @@ function Accounts({ username }) {
               {" "}
             </Header2>
           </div>
-          <div id="padded">
+          <div className="padded">
             <TestAccount account={account} handleCopyClick={handleCopyClick} />
             <AddThingsSection
               account={account}

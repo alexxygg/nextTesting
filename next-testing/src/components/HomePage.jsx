@@ -17,7 +17,7 @@ function HomePage() {
   return (
     <>
       <HeaderOtherLinks />
-      <div id="paddedList2">
+      <div className="paddedList2">
         <div className="homepage">
           <h1 className="featureTitle homepageTitle logo">FirePulse©</h1>
           <h2 className="goldColor leftAlign featureTitle">
