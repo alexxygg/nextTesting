@@ -490,7 +490,6 @@ button:active {
   background-color: rgba(2, 4, 5, 0.55);
   display: flex;
   border-bottom: solid 4px red;
-  border-color: ;
   justify-content: space-between;
   align-items: center;
 }
@@ -743,6 +742,16 @@ a.searchBtn {
   display: flex;
   justify-content: space-around;
 }
+.allGoodNumbers > div > input {
+  min-width: 100px;
+  width: 28%;
+  max-width: 100%;
+}
+.div2 > .input {
+  min-width: 18% !important;
+  max-width: 18% !important;
+  overflow: hidden;
+}
 
 .allGoodAddresses > div {
   display: flex;
@@ -772,11 +781,7 @@ a.searchBtn {
   width: 20%;
   overflow: hidden;
 }
-.allGoodNumbers > div > input {
-  min-width: 100px;
-  width: 28%;
-  max-width: 100%;
-}
+
 .marginAuto {
   margin: 10px auto;
 }

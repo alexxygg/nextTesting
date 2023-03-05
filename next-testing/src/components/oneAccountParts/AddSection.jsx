@@ -115,44 +115,38 @@ const AddSection = ({ account, handleCopyClick }) => {
             ))}
           </div>{" "}
           <form onSubmit={handleAddNumber}>
-            <div className="div">
-              <img src="/phone2.png" />
-              &nbsp;
-              <input
-                placeholder="xxx-xxx-xxxx"
-                type="text"
-                className="eighty"
-                value={newNumber.number}
-                onChange={(event) =>
-                  setNewNumber({ ...newNumber, number: event.target.value })
-                }
-              />
-            </div>
-            <div className="div">
-              <img src="/address.png" />
-              &nbsp;
-              <input
-                placeholder="home,cell"
-                type="text"
-                className="eighty"
-                value={newNumber.type}
-                onChange={(event) =>
-                  setNewNumber({ ...newNumber, type: event.target.value })
-                }
-              />
-            </div>
-            <div className="div">
-              <img src="/timeZone.png" />
-              &nbsp;
-              <input
-                placeholder="pacific,atlantic"
-                type="text"
-                className="eighty"
-                value={newNumber.area}
-                onChange={(event) =>
-                  setNewNumber({ ...newNumber, area: event.target.value })
-                }
-              />
+            <div className="allGoodNumbers">
+              <div className="div div2">
+                <img src="/phone2.png" />
+                <input
+                  placeholder="xxx-xxx-xxxx"
+                  type="text"
+                  value={newNumber.number}
+                  onChange={(event) =>
+                    setNewNumber({ ...newNumber, number: event.target.value })
+                  }
+                />
+                <img src="/address.png" />
+                <input
+                  className="input"
+                  placeholder="Home,Cell"
+                  type="text"
+                  value={newNumber.type}
+                  onChange={(event) =>
+                    setNewNumber({ ...newNumber, type: event.target.value })
+                  }
+                />
+                <img src="/timeZone.png" />
+                <input
+                  className="input"
+                  placeholder="PST,CST..."
+                  type="text"
+                  value={newNumber.area}
+                  onChange={(event) =>
+                    setNewNumber({ ...newNumber, area: event.target.value })
+                  }
+                />
+              </div>
             </div>
             <button className="weirdBtn" type="submit">
               Add
