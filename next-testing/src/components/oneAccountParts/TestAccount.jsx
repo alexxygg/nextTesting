@@ -28,9 +28,11 @@ function TestAccount({ account, handleCopyClick }) {
 
   return (
     <div className="account accountFields">
-      <div className="title">ACCOUNT </div>
+      <div className="title">ACCOUNT</div>
       <div className="section">
-        <div className="div">
+        {" "}
+        <StatusComp account={account} />{" "}
+        <div className="div" style={{ marginTop: "10px" }}>
           <div className="beforeInput thirty">Imported on:</div>
           <input
             readOnly
@@ -129,7 +131,6 @@ function TestAccount({ account, handleCopyClick }) {
       </div>
       <div className="title">CLIENT</div>
       <div className="section">
-        <StatusComp account={account} />
         <div className="subTitle">DETAILS</div>
         <div className="div">
           <div className="beforeInput thirty">Client:</div>

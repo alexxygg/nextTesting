@@ -73,7 +73,7 @@ function Header2({ account, handleSaveClick }) {
         <Link className="a" href="/accounts/search" target="_blank">
           <img src="/search.png" alt="" className="img2" />
         </Link>
-        <button className="saveChangesBtn" onClick={changesAlert}>
+        <button className="saveChangesBtn twoRem" onClick={changesAlert}>
           Save Changes
         </button>
       </div>

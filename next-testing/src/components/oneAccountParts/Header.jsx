@@ -13,7 +13,7 @@ function Header({ account, handleLogout }) {
       <div>
         <div className="userSigned ">
           {" "}
-          <div>Logged in</div>
+          <div></div>
           <button onClick={handleLogout} className="weirdBtn borderLeft">
             Log out
           </button>

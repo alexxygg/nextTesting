@@ -15,6 +15,9 @@ body {
   background-size: 800% 800%;
   animation: background-shift 120s linear infinite;
 }
+option {
+  background-color: black;
+}
 a {
   font-weight: 500;
   color: white;
@@ -859,14 +862,11 @@ select::-webkit-scrollbar,
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.97);
+  background-color: black;
 }
 
-select::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb {
-  background-color: #213547;
-  margin-bottom: 10px;
+  background-color: rgb(10, 12, 33);
   border: solid black;
 }
 
@@ -939,7 +939,7 @@ input {
   width: 70%;
   margin-left: auto;
   color: white;
-  border: white solid 1px;
+  border: red solid 1px;
   outline: solid black 3px;
 }
 .div > .div2 {
@@ -1013,7 +1013,7 @@ a.searchBtn:hover {
 input:hover,
 select:hover,
 .select:hover {
-  outline: solid rgb(2, 80, 30) 3px;
+  outline: solid rgba(255, 255, 255, 0.8) 3px;
   z-index: 2;
   border-color: transparent;
 }
@@ -1021,6 +1021,13 @@ select:hover,
 .select:hover {
   border: solid black 2px;
   outline: solid rgb(2, 80, 30) 2px;
+}
+.select:hover {
+  outline: solid red 3px;
+}
+.twoRem {
+  border-radius: 2rem;
+  outline: solid white 1px;
 }
 .video {
   width: 100%;
