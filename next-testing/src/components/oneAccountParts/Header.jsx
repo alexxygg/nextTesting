@@ -1,4 +1,4 @@
-function Header({ account, username, handleLogout }) {
+function Header({ account, handleLogout }) {
   return (
     <div className="header ">
       <div className="logo">FirePulse©</div>

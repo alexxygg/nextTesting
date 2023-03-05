@@ -24,7 +24,6 @@ function Header2({ account, handleSaveClick }) {
   };
   return (
     <>
-      <SearchBar />
       <div className="header2 ">
         <Link className="a" href="/search">
           <img src="/homeIcon.png" alt="" className="img2" />
@@ -78,6 +77,7 @@ function Header2({ account, handleSaveClick }) {
           Save Changes
         </button>
       </div>
+      <SearchBar />
     </>
   );
 }

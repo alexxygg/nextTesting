@@ -9,6 +9,7 @@ const SearchPage = () => {
   const [searchBy, setSearchBy] = useState("id");
   const [searchResults, setSearchResults] = useState(false);
   const [showNoMatches, setShowNoMatches] = useState(false);
+  const [countdown, setCountdown] = useState(30);
 
   const handleSubmit = async (event) => {
     // Use async/await for Supabase client calls
@@ -34,23 +35,31 @@ const SearchPage = () => {
 
     setSearchResults(data);
     setShowNoMatches(data.length === 0);
+    setCountdown(30);
   };
 
   const clearSearch = () => {
     setSearchTerm("");
     setSearchResults(false);
+    setCountdown(30);
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchResults(false);
       setShowNoMatches(false);
-    }, 40000);
+      setCountdown(30);
+    }, countdown * 1000);
+
+    const interval = setInterval(() => {
+      setCountdown((countdown) => countdown - 1);
+    }, 1000);
 
     return () => {
       clearTimeout(timer);
+      clearInterval(interval);
     };
-  }, [searchResults, showNoMatches]);
+  }, [searchResults, showNoMatches, countdown]);
 
   return (
     <>
@@ -117,7 +126,10 @@ const SearchPage = () => {
                 ))}
                 <button onClick={clearSearch} className="clearSearch">
                   Clear Search
-                </button>
+                </button>{" "}
+                <div>
+                  Results automatically clear after {countdown} seconds.
+                </div>{" "}
               </div>
             ) : showNoMatches ? (
               <div className="results">
@@ -125,7 +137,10 @@ const SearchPage = () => {
                 <div className="paddedList"> No matches found.</div>
                 <button onClick={clearSearch} className="clearSearch">
                   Clear Search
-                </button>
+                </button>{" "}
+                <div>
+                  Results automatically clear after {countdown} seconds.
+                </div>
               </div>
             ) : null
           ) : null}

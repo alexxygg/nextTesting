@@ -76,7 +76,7 @@ button:active {
 .header {
   justify-content: space-between;
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   display: flex;
   outline: 3px solid black;
   width: 100%;
@@ -120,14 +120,13 @@ button:active {
 .header2 {
   justify-content: space-around;
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   border-radius: 0;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   z-index: 3;
   height: max-content;
-  border-bottom: solid 2px gold;
   outline: solid black;
 }
 .header2 > div {
@@ -210,7 +209,12 @@ button:active {
   margin: 0;
   border: none;
   box-shadow: none;
-  max-width: 99.4%;
+}
+.blackBg {
+  background-color: rgb(2, 4, 5);
+}
+.bold {
+  font-weight: 900;
 }
 .userSigned > div {
   margin: 0 10px;
@@ -226,10 +230,6 @@ button:active {
   min-width: max-content;
   background-color: red;
 }
-/* .loginPage > input {
-  margin: 2% 25%;
-} */
-
 @media (min-width: 1000px) {
   .padded {
     padding: 0 10vw;
@@ -259,7 +259,6 @@ button:active {
 }
 .title {
   width: 100%;
-  outline: solid black;
   height: 20px;
   margin: 7px 0;
   margin-top: 15px;
@@ -268,9 +267,11 @@ button:active {
   color: gold;
   background-color: black;
   border: solid #0c2235;
+  outline: solid black;
   border-bottom: none;
   text-align: center;
   font-weight: 900;
+  box-sizing: border-box;
 }
 .title:nth-of-type(1) {
   margin-top: 15px;
@@ -298,7 +299,6 @@ button:active {
 .notes,
 .newNoteField,
 .newNoteBtn,
-.clearSearch,
 .searchBarDiv,
 .otherSites,
 .title,
@@ -317,8 +317,9 @@ button:active {
   box-shadow: 2px 2px 8px #08090b, -2px -2px 8px #1a2e3e;
 }
 .notesDiv {
-  padding-bottom: 3.5vh;
+  padding-bottom: 23px;
   margin-bottom: 23px;
+  width: 100%;
 }
 .newNoteField,
 .newNoteBtn {
@@ -373,7 +374,6 @@ button:active {
   width: 20%;
   display: flex;
   flex-wrap: wrap;
-  font-weight: 900;
 }
 .importantCheckboxDiv {
   min-width: max-content;
@@ -387,20 +387,22 @@ button:active {
   outline: solid white;
   border-radius: 10px;
   accent-color: blue;
+  flex-wrap: wrap;
 }
 .importantCheckbox {
-  width: 10%;
-  margin: auto 10%;
+  width: 60%;
+  margin: 5px 20%;
   outline: none;
 }
 .importantWord {
-  width: 40%;
-  margin: auto 15%;
+  width: 80%;
+  margin: 0 10%;
   outline: none;
+  min-width: max-content;
 }
 
 .newNoteField {
-  width: 76%;
+  width: 98%;
   margin: 20px 0;
   margin-right: 2%;
   background-color: ghostwhite;
@@ -447,7 +449,7 @@ button:active {
 }
 .otherSites {
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -461,6 +463,7 @@ button:active {
   padding: 5px 0;
   background-color: #14171b;
   outline: black solid 2px;
+  margin-bottom: 7px;
 }
 
 .accountFromResults > div:nth-child(1) {
@@ -486,7 +489,8 @@ button:active {
   background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.55);
   display: flex;
-  outline: black solid;
+  border-bottom: solid 4px red;
+  border-color: ;
   justify-content: space-between;
   align-items: center;
 }
@@ -512,14 +516,13 @@ button:active {
   background-color: transparent;
 }
 .searchBarDivSmall > .searchBy > select:hover {
-  outline: solid #ffffff 2px;
-  border: solid black;
+  outline: solid #ffffff 1px;
   z-index: 3;
   height: max-content;
 }
 .searchBar:hover {
   border: solid black;
-  outline: solid #ffffff 2px;
+  outline: solid #ffffff 1px;
 }
 
 .searchBy {
@@ -557,7 +560,9 @@ a.searchBtn {
   border-left: none;
   outline: solid #7d7878 1px;
 }
-
+.searchBtn {
+  height: 20px;
+}
 .weirdBtn,
 .saveChangesBtn {
   width: 85%;
@@ -617,8 +622,9 @@ a.searchBtn {
   min-width: 100%;
   width: 100%;
   height: max-content;
-  background-color: #213547;
-  border-bottom: solid red 3px;
+  background-color: rgb(2, 4, 5);
+  background-color: rgba(2, 4, 5, 0.97);
+  border-bottom: solid red 3px solid black 2px;
   border-radius: 0 0 10px 10px;
   outline: solid black;
   text-align: center;
@@ -662,7 +668,7 @@ a.searchBtn {
   height: 20px;
   width: 100%;
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   outline: solid black;
   position: fixed;
   z-index: 3;
@@ -688,14 +694,14 @@ a.searchBtn {
 
 .searchBarDivAgainSmall > .searchBarDivSmall {
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   outline: none;
   display: flex;
   width: 100%;
 }
 .searchBarDivAgain > .searchBarDiv {
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   display: flex;
   padding: 2% 1%;
   margin: 0;
@@ -742,7 +748,6 @@ a.searchBtn {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 3px 0;
   width: 100%;
 }
 .allGoodNumbers,
@@ -770,7 +775,6 @@ a.searchBtn {
 .allGoodNumbers > div > input {
   min-width: 100px;
   width: 28%;
-  margin: auto;
   max-width: 100%;
 }
 .marginAuto {
@@ -827,7 +831,7 @@ a.searchBtn {
 select {
   width: 30%;
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   border: none;
   height: 19px;
   text-align: right;
@@ -841,7 +845,7 @@ select::-webkit-scrollbar,
 
 ::-webkit-scrollbar-track {
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
 }
 
 select::-webkit-scrollbar-thumb,
@@ -884,7 +888,7 @@ input {
   text-align: end;
   color: ghostwhite;
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   outline: solid black;
   max-width: 90px;
   width: 100%;
@@ -920,6 +924,8 @@ input {
   width: 70%;
   margin-left: auto;
   color: white;
+  border: white solid 1px;
+  outline: solid black 3px;
 }
 .div > .div2 {
   display: flex;
@@ -984,24 +990,24 @@ button:hover,
 textarea:hover,
 .importantCheckboxDiv:hover,
 a.searchBtn:hover {
-  outline: solid white 2px;
+  outline: solid white 1px;
   z-index: 2;
   transition: all ease-in;
 }
-
+select option {
+  background-color: rgba(2, 4, 5, 0.55);
+}
 input:hover,
 select:hover,
 .select:hover {
   outline: solid rgb(255, 0, 0) 3px;
   z-index: 2;
-  border: solid black 2px;
+  border-color: transparent;
 }
 select:hover,
 .select:hover {
-  outline: solid white 3px;
-
-  background-color: rgb(2, 80, 30);
-  accent-color: blue;
+  border: solid black 2px;
+  outline: solid red 2px;
 }
 .video {
   width: 100%;
@@ -1030,7 +1036,7 @@ select:hover,
 }
 .dispositionsNote {
   background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.95);
+  background-color: rgba(2, 4, 5, 0.97);
   border: solid black;
   outline: solid white 1px;
   width: 100%;

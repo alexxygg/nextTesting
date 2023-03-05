@@ -1,8 +1,8 @@
 function UserSigned({ handleLogout }) {
   return (
-    <div className="userSigned title">
+    <div className="userSigned blackBg">
       {" "}
-      <div>Logged in </div>
+      <div className="bold">Logged in </div>
       <button onClick={handleLogout} className="weirdBtn borderLeft">
         Log out
       </button>{" "}

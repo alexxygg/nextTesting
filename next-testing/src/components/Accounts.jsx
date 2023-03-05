@@ -66,9 +66,7 @@ function Accounts({ username }) {
               username={username}
               handleLogout={handleLogout}
             />
-            <Header2 account={account} handleSaveClick={handleSaveClick}>
-              {" "}
-            </Header2>
+            <Header2 account={account} handleSaveClick={handleSaveClick} />
           </div>
           <div className="padded">
             <TestAccount account={account} handleCopyClick={handleCopyClick} />

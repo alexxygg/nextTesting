@@ -47,7 +47,7 @@ function TLO({ account, handleCopyClick }) {
               </div>
             );
           })}
-        <div className="subTitle goldColor">EMPLOYER</div>
+        <div className="subTitle">EMPLOYER</div>
         <div className="div">
           <div className="beforeInput sixth">Employer:</div>
           <input
