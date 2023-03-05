@@ -118,16 +118,16 @@ button:active {
   align-items: center;
 }
 .header2 {
-  justify-content: space-around;
   background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.97);
   border-radius: 0;
-  align-items: center;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   z-index: 3;
-  height: max-content;
   outline: solid black;
+  width: 100%;
 }
 .header2 > div {
   width: auto;
@@ -229,6 +229,7 @@ button:active {
   box-shadow: none;
   min-width: max-content;
   background-color: red;
+  border-radius: 0 !important;
 }
 @media (min-width: 1000px) {
   .padded {
@@ -451,7 +452,7 @@ button:active {
   max-height: 24px !important;
 }
 .redColor {
-  color: rgb(2, 80, 30);
+  color: red;
 }
 .otherSites {
   background-color: rgb(2, 4, 5);
@@ -578,27 +579,33 @@ button:active {
 .saveChangesBtn {
   width: 85%;
   border-radius: 2rem;
-  margin: 20px 0;
+  margin: 15px 0;
   border: solid black;
   margin-left: 15%;
   height: 30px;
-  outline: solid white 2px;
+  outline: solid white 1px;
+  border-radius: 0 !important;
 }
-
+.weirdBtn:hover,
+.saveChangesBtn:hover,
+.searchBtn:hover {
+  border-radius: 0 !important;
+}
 .saveChangesBtn {
   width: max-content;
-  height: min-content;
   margin: 0;
-  right: 0;
-  background-color: rgb(2, 80, 30);
-  border-radius: 0;
-  outline: none;
-  border: solid black 3px;
+  background-color: rgb(20, 30, 40) !important;
+  outline: none !important;
+  color: white !important;
+}
+.saveChangesBtn:hover {
+  background-color: rgb(140, 197, 84) !important;
+  color: black !important;
 }
 #popUp {
   visibility: hidden;
   color: white;
-  background-color: rgb(2, 80, 30);
+  background-color: red !important;
   min-width: 250px;
   margin-left: -125px;
   border-radius: 2rem 2rem 0 0;
@@ -621,7 +628,7 @@ button:active {
   border-radius: 10px;
 }
 .clearSearch {
-  background-color: rgb(2, 80, 30);
+  background-color: red;
   width: 28%;
   border-radius: 10px;
   margin: 1.5%;
@@ -636,7 +643,7 @@ button:active {
   height: max-content;
   background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.97);
-  border-bottom: solid rgb(2, 80, 30) 3px solid black 2px;
+  border-bottom: solid red 3px solid black 2px;
   border-radius: 0 0 10px 10px;
   outline: solid black;
   text-align: center;
@@ -659,14 +666,14 @@ button:active {
 .notFoundA {
   font-size: xx-large;
   height: 50%;
-  background-color: rgb(2, 80, 30);
+  background-color: red;
   padding-top: 20px;
   border-radius: 5px 5px 0 0;
 }
 .notFoundB {
   font-size: small;
   height: 50%;
-  background-color: rgb(2, 80, 30);
+  background-color: red;
   padding-bottom: 50px;
   padding-top: 30px;
 }
@@ -796,7 +803,13 @@ button:active {
 }
 
 .marginAuto {
-  margin: 10px auto;
+  margin-left: auto !important;
+  outline: solid white 1px !important;
+}
+.marginAuto:hover {
+  outline: solid white 1px !important;
+  border: solid white 1px !important;
+  background-color: red;
 }
 .homepage {
   display: flex;
@@ -876,7 +889,7 @@ select::-webkit-scrollbar,
   justify-content: space-around;
   align-items: center;
   border-radius: 0 0 10px 10px;
-  border: solid gold 1px;
+  border: solid white 1px;
   outline: solid black;
   background-color: transparent;
   width: 100%;
@@ -933,13 +946,12 @@ input {
 .select {
   border-width: 1px;
   border-style: inset;
-  background-color: rgb(10, 12, 33);
+  background-color: rgb(20, 30, 40);
   padding-right: 10px;
   font-weight: 700;
   width: 70%;
   margin-left: auto;
   color: white;
-  border: red solid 1px;
   outline: solid black 3px;
 }
 .div > .div2 {
@@ -1008,22 +1020,29 @@ a.searchBtn:hover {
   outline: solid white 1px;
   z-index: 2;
   transition: all ease-in;
+  border-radius: 10px !important;
 }
-
+button:hover {
+  border: solid 2px;
+}
+.weirdBtn:hover {
+  border: solid 1px;
+}
 input:hover,
 select:hover,
 .select:hover {
-  outline: solid rgba(255, 255, 255, 0.8) 3px;
+  outline: solid gold 1px;
   z-index: 2;
   border-color: transparent;
 }
 select:hover,
 .select:hover {
-  border: solid black 2px;
-  outline: solid rgb(2, 80, 30) 2px;
+  border: solid white 2px;
+  outline: solid red 2px;
 }
 .select:hover {
-  outline: solid red 3px;
+  border: solid black 3px;
+  outline: solid gold 1px;
 }
 .twoRem {
   border-radius: 2rem;

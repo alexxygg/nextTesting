@@ -4,7 +4,7 @@ function Header({ account, handleLogout }) {
       <div className="logo">FirePulse©</div>
       <div>
         <div>
-          Name: <span className="goldColor">{account.name}</span>{" "}
+          Name: <span className="goldColor">{account.name.toUpperCase()}</span>{" "}
         </div>
         <div>
           Status: <span className="goldColor">{account.STATUS}</span>{" "}
