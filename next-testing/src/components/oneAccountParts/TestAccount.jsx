@@ -28,7 +28,7 @@ function TestAccount({ account, handleCopyClick }) {
 
   return (
     <div className="account accountFields">
-      <div className="title">...</div>
+      <div className="title">ACCOUNT </div>
       <div className="section">
         <div className="div">
           <div className="beforeInput thirty">Imported on:</div>

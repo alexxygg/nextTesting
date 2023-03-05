@@ -53,7 +53,7 @@ function Header2({ account, handleSaveClick }) {
         </div>
         {Number(account.id) > 1 && (
           <Link className="a" href={`/accounts/${Number(account.id) - 1}`}>
-            <img src="/previous.png" className="img3" />
+            <img src="/previous.png" className="img2 imgOther" />
           </Link>
         )}
         <div>
@@ -61,7 +61,7 @@ function Header2({ account, handleSaveClick }) {
         </div>
         {Number(account.id) < allAccounts.length && (
           <Link className="a" href={`/accounts/${Number(account.id) + 1}`}>
-            <img src="/next.png" className="img3" />
+            <img src="/next.png" className="img2 imgOther" />
           </Link>
         )}
         <Link className="a" href={`/accounts`}>
@@ -78,6 +78,7 @@ function Header2({ account, handleSaveClick }) {
         </button>
       </div>
       <SearchBar />
+      <div className="borderFromTop"></div>
     </>
   );
 }

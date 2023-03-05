@@ -5,12 +5,7 @@ export default function Document() {
     <Html lang="en">
       <title>FirePulse</title>
       {/* <!-- our google font --> */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-        rel="stylesheet"
-      />
+
       {/* <!-- our favicon --> */}
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       <Head />

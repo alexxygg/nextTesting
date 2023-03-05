@@ -48,7 +48,7 @@ a:hover {
 }
 
 button {
-  background-color: blue;
+  background-color: rgb(10, 12, 33);
   color: ghostwhite;
   transition: all 0.1s ease-in-out;
   font-family: monospace;
@@ -56,11 +56,9 @@ button {
 }
 button:hover {
   transform: translateY(-0.5px);
-  box-shadow: 0 5px 10px rgb(54, 69, 105);
 }
 button:active {
   transform: translateY(0.5px);
-  box-shadow: 0 2px 5px rgb(54, 69, 105);
 }
 
 .account {
@@ -91,7 +89,6 @@ button:active {
   text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
     1px 1px 0 gold;
   color: black;
-  font-family: monospace;
   border: 5px solid#0c2235;
   outline: black solid;
   border-image-slice: 1;
@@ -282,18 +279,18 @@ button:active {
 }
 .subTitle {
   font-size: smaller;
-  background-color: rgb(2, 4, 5);
-  background-color: rgba(2, 4, 5, 0.8);
+  background-color: black;
   min-width: max-content;
-  width: 100%;
+  width: auto;
   padding: 0 5px;
   outline: solid black;
-  color: white;
+  color: gold;
   height: max-content;
   font-weight: 900;
   text-align: center;
   margin: 10px 0;
-  border-radius: 2rem;
+  margin-right: auto;
+  border-radius: 0 2rem 2rem 2rem;
 }
 .section,
 .notes,
@@ -332,7 +329,7 @@ button:active {
   outline: solid black;
 }
 .blueColor {
-  color: blue;
+  color: rgb(10, 12, 33);
 }
 .note,
 .id,
@@ -386,8 +383,11 @@ button:active {
   border: solid black;
   outline: solid white;
   border-radius: 10px;
-  accent-color: blue;
+  accent-color: rgb(10, 12, 33);
   flex-wrap: wrap;
+}
+.importantCheckbox:hover {
+  outline: none;
 }
 .importantCheckbox {
   width: 60%;
@@ -439,13 +439,16 @@ button:active {
   filter: drop-shadow(1px 1px 1px red);
 }
 .a > .img2 {
-  max-width: 27px;
-  max-height: 27px;
+  max-width: 25px;
+  max-height: 25px;
   filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
 }
-
+.imgOther {
+  max-width: 24px !important;
+  max-height: 24px !important;
+}
 .redColor {
-  color: red;
+  color: rgb(2, 80, 30);
 }
 .otherSites {
   background-color: rgb(2, 4, 5);
@@ -489,14 +492,18 @@ button:active {
   background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.55);
   display: flex;
-  border-bottom: solid 4px red;
   justify-content: space-between;
   align-items: center;
+}
+.borderFromTop {
+  border-bottom: solid 7px rgb(10, 12, 33);
+  outline: solid black 3px;
 }
 .searchBarDivSmall > .searchBy,
 .searchBarDiv > .searchBy {
   height: 15px;
   min-width: max-content;
+  background-color: rgb(10, 12, 33);
 }
 
 .searchBy > select {
@@ -505,6 +512,7 @@ button:active {
   background-color: transparent;
   height: 16px;
   color: white;
+  background-color: rgb(10, 12, 33);
 }
 .searchBarDivSmall > .searchBar,
 .searchBarDiv > .searchBar {
@@ -512,7 +520,7 @@ button:active {
   min-width: max-content;
   width: 100%;
   max-width: 100%;
-  background-color: transparent;
+  background-color: rgb(10, 12, 33);
 }
 .searchBarDivSmall > .searchBy > select:hover {
   outline: solid #ffffff 1px;
@@ -544,8 +552,8 @@ button:active {
   border: solid black;
   outline: solid #7d7878 1px;
 }
-a.searchBtn {
-  background-color: blue;
+.searchBtn {
+  background-color: rgb(10, 12, 33);
 }
 .searchBtn,
 .clearSearch {
@@ -562,6 +570,7 @@ a.searchBtn {
 .searchBtn {
   height: 20px;
 }
+
 .weirdBtn,
 .saveChangesBtn {
   width: 85%;
@@ -572,6 +581,7 @@ a.searchBtn {
   height: 30px;
   outline: solid white 2px;
 }
+
 .saveChangesBtn {
   width: max-content;
   height: min-content;
@@ -585,7 +595,7 @@ a.searchBtn {
 #popUp {
   visibility: hidden;
   color: white;
-  background-color: red;
+  background-color: rgb(2, 80, 30);
   min-width: 250px;
   margin-left: -125px;
   border-radius: 2rem 2rem 0 0;
@@ -608,7 +618,7 @@ a.searchBtn {
   border-radius: 10px;
 }
 .clearSearch {
-  background-color: red;
+  background-color: rgb(2, 80, 30);
   width: 28%;
   border-radius: 10px;
   margin: 1.5%;
@@ -623,7 +633,7 @@ a.searchBtn {
   height: max-content;
   background-color: rgb(2, 4, 5);
   background-color: rgba(2, 4, 5, 0.97);
-  border-bottom: solid red 3px solid black 2px;
+  border-bottom: solid rgb(2, 80, 30) 3px solid black 2px;
   border-radius: 0 0 10px 10px;
   outline: solid black;
   text-align: center;
@@ -646,14 +656,14 @@ a.searchBtn {
 .notFoundA {
   font-size: xx-large;
   height: 50%;
-  background-color: red;
+  background-color: rgb(2, 80, 30);
   padding-top: 20px;
   border-radius: 5px 5px 0 0;
 }
 .notFoundB {
   font-size: small;
   height: 50%;
-  background-color: red;
+  background-color: rgb(2, 80, 30);
   padding-bottom: 50px;
   padding-top: 30px;
 }
@@ -671,7 +681,7 @@ a.searchBtn {
   outline: solid black;
   position: fixed;
   z-index: 3;
-  border-top: solid blue 4px;
+  border-top: solid rgb(10, 12, 33) 4px;
 }
 .aboutPage {
   min-height: 94vh;
@@ -923,7 +933,7 @@ input {
 .select {
   border-width: 1px;
   border-style: inset;
-  background-color: blue;
+  background-color: rgb(10, 12, 33);
   padding-right: 10px;
   font-weight: 700;
   width: 70%;
@@ -999,20 +1009,18 @@ a.searchBtn:hover {
   z-index: 2;
   transition: all ease-in;
 }
-select option {
-  background-color: rgba(2, 4, 5, 0.55);
-}
+
 input:hover,
 select:hover,
 .select:hover {
-  outline: solid rgb(255, 0, 0) 3px;
+  outline: solid rgb(2, 80, 30) 3px;
   z-index: 2;
   border-color: transparent;
 }
 select:hover,
 .select:hover {
   border: solid black 2px;
-  outline: solid red 2px;
+  outline: solid rgb(2, 80, 30) 2px;
 }
 .video {
   width: 100%;
@@ -1028,7 +1036,7 @@ select:hover,
   max-width: 40%;
   margin: auto;
   margin-top: 0;
-  border: solid blue 3px;
+  border: solid rgb(10, 12, 33) 3px;
   outline: solid black;
 }
 .feature,
@@ -1097,5 +1105,5 @@ select:hover,
   background-color: rgba(255, 255, 255, 0.1);
 }
 .blue {
-  color: blue;
+  color: rgb(10, 12, 33);
 }
