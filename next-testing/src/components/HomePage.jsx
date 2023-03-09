@@ -79,7 +79,7 @@ function HomePage() {
           </div>
           <div>You can use these credentials:</div>
           <li>username: a@test.com</li>
-          <li>password: test</li>
+          <li>password: aTestPwd12!</li>
         </div>
       </div>
     </>
